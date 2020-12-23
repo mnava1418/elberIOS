@@ -1,0 +1,641 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		50992E2F2593FD260077A203 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50992E2E2593FD260077A203 /* AppDelegate.swift */; };
+		50992E312593FD260077A203 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50992E302593FD260077A203 /* SceneDelegate.swift */; };
+		50992E332593FD260077A203 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50992E322593FD260077A203 /* ViewController.swift */; };
+		50992E362593FD260077A203 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50992E342593FD260077A203 /* Main.storyboard */; };
+		50992E382593FD280077A203 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50992E372593FD280077A203 /* Assets.xcassets */; };
+		50992E3B2593FD280077A203 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50992E392593FD280077A203 /* LaunchScreen.storyboard */; };
+		50992E402593FD280077A203 /* Elber WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 50992E3F2593FD280077A203 /* Elber WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		50992E462593FD280077A203 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50992E442593FD280077A203 /* Interface.storyboard */; };
+		50992E482593FD2B0077A203 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50992E472593FD2B0077A203 /* Assets.xcassets */; };
+		50992E4F2593FD2B0077A203 /* Elber WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 50992E4E2593FD2B0077A203 /* Elber WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		50992E542593FD2B0077A203 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50992E532593FD2B0077A203 /* InterfaceController.swift */; };
+		50992E562593FD2B0077A203 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50992E552593FD2B0077A203 /* ExtensionDelegate.swift */; };
+		50992E582593FD2B0077A203 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50992E572593FD2B0077A203 /* NotificationController.swift */; };
+		50992E5A2593FD2B0077A203 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50992E592593FD2B0077A203 /* ComplicationController.swift */; };
+		50992E5C2593FD2D0077A203 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50992E5B2593FD2D0077A203 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		50992E412593FD280077A203 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 50992E232593FD250077A203 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50992E3E2593FD280077A203;
+			remoteInfo = "Elber WatchKit App";
+		};
+		50992E502593FD2B0077A203 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 50992E232593FD250077A203 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50992E4D2593FD2B0077A203;
+			remoteInfo = "Elber WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		50992E642593FD2D0077A203 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				50992E4F2593FD2B0077A203 /* Elber WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50992E682593FD2D0077A203 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				50992E402593FD280077A203 /* Elber WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		50992E2B2593FD260077A203 /* Elber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elber.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		50992E2E2593FD260077A203 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		50992E302593FD260077A203 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		50992E322593FD260077A203 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		50992E352593FD260077A203 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		50992E372593FD280077A203 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		50992E3A2593FD280077A203 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		50992E3C2593FD280077A203 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50992E3F2593FD280077A203 /* Elber WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Elber WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		50992E452593FD280077A203 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		50992E472593FD2B0077A203 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		50992E492593FD2B0077A203 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50992E4E2593FD2B0077A203 /* Elber WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Elber WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		50992E532593FD2B0077A203 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		50992E552593FD2B0077A203 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		50992E572593FD2B0077A203 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		50992E592593FD2B0077A203 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		50992E5B2593FD2D0077A203 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		50992E5D2593FD2D0077A203 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50992E5E2593FD2D0077A203 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		50992E282593FD260077A203 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50992E4B2593FD2B0077A203 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		50992E222593FD250077A203 = {
+			isa = PBXGroup;
+			children = (
+				50992E2D2593FD260077A203 /* Elber */,
+				50992E432593FD280077A203 /* Elber WatchKit App */,
+				50992E522593FD2B0077A203 /* Elber WatchKit Extension */,
+				50992E2C2593FD260077A203 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		50992E2C2593FD260077A203 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				50992E2B2593FD260077A203 /* Elber.app */,
+				50992E3F2593FD280077A203 /* Elber WatchKit App.app */,
+				50992E4E2593FD2B0077A203 /* Elber WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		50992E2D2593FD260077A203 /* Elber */ = {
+			isa = PBXGroup;
+			children = (
+				50992E2E2593FD260077A203 /* AppDelegate.swift */,
+				50992E302593FD260077A203 /* SceneDelegate.swift */,
+				50992E322593FD260077A203 /* ViewController.swift */,
+				50992E342593FD260077A203 /* Main.storyboard */,
+				50992E372593FD280077A203 /* Assets.xcassets */,
+				50992E392593FD280077A203 /* LaunchScreen.storyboard */,
+				50992E3C2593FD280077A203 /* Info.plist */,
+			);
+			path = Elber;
+			sourceTree = "<group>";
+		};
+		50992E432593FD280077A203 /* Elber WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				50992E442593FD280077A203 /* Interface.storyboard */,
+				50992E472593FD2B0077A203 /* Assets.xcassets */,
+				50992E492593FD2B0077A203 /* Info.plist */,
+			);
+			path = "Elber WatchKit App";
+			sourceTree = "<group>";
+		};
+		50992E522593FD2B0077A203 /* Elber WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				50992E532593FD2B0077A203 /* InterfaceController.swift */,
+				50992E552593FD2B0077A203 /* ExtensionDelegate.swift */,
+				50992E572593FD2B0077A203 /* NotificationController.swift */,
+				50992E592593FD2B0077A203 /* ComplicationController.swift */,
+				50992E5B2593FD2D0077A203 /* Assets.xcassets */,
+				50992E5D2593FD2D0077A203 /* Info.plist */,
+				50992E5E2593FD2D0077A203 /* PushNotificationPayload.apns */,
+			);
+			path = "Elber WatchKit Extension";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		50992E2A2593FD260077A203 /* Elber */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50992E692593FD2D0077A203 /* Build configuration list for PBXNativeTarget "Elber" */;
+			buildPhases = (
+				50992E272593FD260077A203 /* Sources */,
+				50992E282593FD260077A203 /* Frameworks */,
+				50992E292593FD260077A203 /* Resources */,
+				50992E682593FD2D0077A203 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				50992E422593FD280077A203 /* PBXTargetDependency */,
+			);
+			name = Elber;
+			productName = Elber;
+			productReference = 50992E2B2593FD260077A203 /* Elber.app */;
+			productType = "com.apple.product-type.application";
+		};
+		50992E3E2593FD280077A203 /* Elber WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50992E652593FD2D0077A203 /* Build configuration list for PBXNativeTarget "Elber WatchKit App" */;
+			buildPhases = (
+				50992E3D2593FD280077A203 /* Resources */,
+				50992E642593FD2D0077A203 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				50992E512593FD2B0077A203 /* PBXTargetDependency */,
+			);
+			name = "Elber WatchKit App";
+			productName = "Elber WatchKit App";
+			productReference = 50992E3F2593FD280077A203 /* Elber WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		50992E4D2593FD2B0077A203 /* Elber WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50992E612593FD2D0077A203 /* Build configuration list for PBXNativeTarget "Elber WatchKit Extension" */;
+			buildPhases = (
+				50992E4A2593FD2B0077A203 /* Sources */,
+				50992E4B2593FD2B0077A203 /* Frameworks */,
+				50992E4C2593FD2B0077A203 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Elber WatchKit Extension";
+			productName = "Elber WatchKit Extension";
+			productReference = 50992E4E2593FD2B0077A203 /* Elber WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		50992E232593FD250077A203 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					50992E2A2593FD260077A203 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					50992E3E2593FD280077A203 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					50992E4D2593FD2B0077A203 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+				};
+			};
+			buildConfigurationList = 50992E262593FD250077A203 /* Build configuration list for PBXProject "Elber" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 50992E222593FD250077A203;
+			productRefGroup = 50992E2C2593FD260077A203 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				50992E2A2593FD260077A203 /* Elber */,
+				50992E3E2593FD280077A203 /* Elber WatchKit App */,
+				50992E4D2593FD2B0077A203 /* Elber WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		50992E292593FD260077A203 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50992E3B2593FD280077A203 /* LaunchScreen.storyboard in Resources */,
+				50992E382593FD280077A203 /* Assets.xcassets in Resources */,
+				50992E362593FD260077A203 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50992E3D2593FD280077A203 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50992E482593FD2B0077A203 /* Assets.xcassets in Resources */,
+				50992E462593FD280077A203 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50992E4C2593FD2B0077A203 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50992E5C2593FD2D0077A203 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		50992E272593FD260077A203 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50992E332593FD260077A203 /* ViewController.swift in Sources */,
+				50992E2F2593FD260077A203 /* AppDelegate.swift in Sources */,
+				50992E312593FD260077A203 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50992E4A2593FD2B0077A203 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50992E582593FD2B0077A203 /* NotificationController.swift in Sources */,
+				50992E5A2593FD2B0077A203 /* ComplicationController.swift in Sources */,
+				50992E562593FD2B0077A203 /* ExtensionDelegate.swift in Sources */,
+				50992E542593FD2B0077A203 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		50992E422593FD280077A203 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 50992E3E2593FD280077A203 /* Elber WatchKit App */;
+			targetProxy = 50992E412593FD280077A203 /* PBXContainerItemProxy */;
+		};
+		50992E512593FD2B0077A203 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 50992E4D2593FD2B0077A203 /* Elber WatchKit Extension */;
+			targetProxy = 50992E502593FD2B0077A203 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		50992E342593FD260077A203 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50992E352593FD260077A203 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		50992E392593FD280077A203 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50992E3A2593FD280077A203 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		50992E442593FD280077A203 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50992E452593FD280077A203 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		50992E5F2593FD2D0077A203 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		50992E602593FD2D0077A203 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		50992E622593FD2D0077A203 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VGUJZ39WN5;
+				INFOPLIST_FILE = "Elber WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mx.com.mnava.Elber.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.1;
+			};
+			name = Debug;
+		};
+		50992E632593FD2D0077A203 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VGUJZ39WN5;
+				INFOPLIST_FILE = "Elber WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mx.com.mnava.Elber.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.1;
+			};
+			name = Release;
+		};
+		50992E662593FD2D0077A203 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VGUJZ39WN5;
+				IBSC_MODULE = Elber_WatchKit_Extension;
+				INFOPLIST_FILE = "Elber WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = mx.com.mnava.Elber.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.1;
+			};
+			name = Debug;
+		};
+		50992E672593FD2D0077A203 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VGUJZ39WN5;
+				IBSC_MODULE = Elber_WatchKit_Extension;
+				INFOPLIST_FILE = "Elber WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = mx.com.mnava.Elber.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.1;
+			};
+			name = Release;
+		};
+		50992E6A2593FD2D0077A203 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VGUJZ39WN5;
+				INFOPLIST_FILE = Elber/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mx.com.mnava.Elber;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		50992E6B2593FD2D0077A203 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VGUJZ39WN5;
+				INFOPLIST_FILE = Elber/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mx.com.mnava.Elber;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		50992E262593FD250077A203 /* Build configuration list for PBXProject "Elber" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50992E5F2593FD2D0077A203 /* Debug */,
+				50992E602593FD2D0077A203 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50992E612593FD2D0077A203 /* Build configuration list for PBXNativeTarget "Elber WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50992E622593FD2D0077A203 /* Debug */,
+				50992E632593FD2D0077A203 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50992E652593FD2D0077A203 /* Build configuration list for PBXNativeTarget "Elber WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50992E662593FD2D0077A203 /* Debug */,
+				50992E672593FD2D0077A203 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50992E692593FD2D0077A203 /* Build configuration list for PBXNativeTarget "Elber" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50992E6A2593FD2D0077A203 /* Debug */,
+				50992E6B2593FD2D0077A203 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 50992E232593FD250077A203 /* Project object */;
+}
