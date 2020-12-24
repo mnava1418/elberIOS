@@ -60,7 +60,7 @@
             <objects>
                 <viewController id="SG0-he-lgC" customClass="ElberViewController" customModule="Elber" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eVh-zG-sdt">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zns-Kv-UCn">
@@ -70,6 +70,9 @@
                                     <constraint firstAttribute="height" constant="240" id="P4y-8r-Gsg"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="elber"/>
+                                <connections>
+                                    <action selector="touchElber:" destination="SG0-he-lgC" eventType="touchUpInside" id="SlZ-SX-XIm"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xt3-aZ-HMe"/>
@@ -81,6 +84,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Elber" id="pKg-PO-cbx"/>
+                    <connections>
+                        <outlet property="btnElber" destination="Zns-Kv-UCn" id="yW7-oE-dbv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bwv-ZX-OxM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

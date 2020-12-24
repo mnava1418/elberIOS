@@ -9,13 +9,18 @@ import UIKit
 
 class ElberViewController: UIViewController {
 
+    @IBOutlet weak var btnElber: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func touchElber(_ sender: Any) {
+        print("Hola!")
+    }
+    
     /*
     // MARK: - Navigation
 
