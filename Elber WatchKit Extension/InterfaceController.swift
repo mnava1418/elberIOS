@@ -11,6 +11,8 @@ import Foundation
 
 class InterfaceController: WKInterfaceController {
 
+    @IBOutlet weak var btnElber: WKInterfaceButton!
+    
     override func awake(withContext context: Any?) {
         // Configure interface objects here.
     }
@@ -23,4 +25,7 @@ class InterfaceController: WKInterfaceController {
         // This method is called when watch view controller is no longer visible
     }
 
+    @IBAction func touchElber() {
+        print("Hola")
+    }
 }
