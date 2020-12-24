@@ -11,6 +11,8 @@ class ElberViewController: UIViewController {
 
     @IBOutlet weak var btnElber: UIButton!
     
+    var isListening = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,9 +20,15 @@ class ElberViewController: UIViewController {
     }
     
     @IBAction func touchElber(_ sender: Any) {
-        print("Hola!")
+        if isListening {
+            btnElber.layer.removeAllAnimations()
+            isListening = false
+        } else {
+            btnElber.animate()
+            isListening = true
+        }
     }
-    
+ 
     /*
     // MARK: - Navigation
 
@@ -31,4 +39,11 @@ class ElberViewController: UIViewController {
     }
     */
 
+}
+
+extension UIButton {
+    func animate () {
+        let animation = ViewUtils.getAnimation()
+        self.layer.add(animation, forKey: "pulse")
+    }
 }
