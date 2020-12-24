@@ -16,9 +16,11 @@
                                 <action selector="touchElber" destination="AgC-eL-Hgc" id="Fdu-im-dD8"/>
                             </connections>
                         </button>
+                        <label alignment="center" verticalAlignment="bottom" hidden="YES" text="Escuchando..." id="heI-9f-CiX"/>
                     </items>
                     <connections>
                         <outlet property="btnElber" destination="qTG-T3-82c" id="Ogu-tL-Tff"/>
+                        <outlet property="listeningLabel" destination="heI-9f-CiX" id="2Q9-OS-AC8"/>
                     </connections>
                 </controller>
             </objects>

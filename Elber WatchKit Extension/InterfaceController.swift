@@ -12,6 +12,9 @@ import Foundation
 class InterfaceController: WKInterfaceController {
 
     @IBOutlet weak var btnElber: WKInterfaceButton!
+    @IBOutlet weak var listeningLabel: WKInterfaceLabel!
+    
+    var isListening = false
     
     override func awake(withContext context: Any?) {
         // Configure interface objects here.
@@ -26,6 +29,16 @@ class InterfaceController: WKInterfaceController {
     }
 
     @IBAction func touchElber() {
-        print("Hola")
+        if isListening {
+            listeningLabel.setHidden(true)
+            btnElber.setWidth(120)
+            btnElber.setWidth(120)
+            isListening = false
+        } else {
+            listeningLabel.setHidden(false)
+            btnElber.setWidth(136)
+            btnElber.setWidth(136)
+            isListening = true
+        }
     }
 }
