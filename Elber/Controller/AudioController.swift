@@ -14,6 +14,8 @@ struct AudioController {
     public func speak(message:String){
         self.prepareAudioSession(audioCategory: AVAudioSession.Category.playback)
         let utterance = AVSpeechUtterance(string: message)
+        utterance.voice = AVSpeechSynthesisVoice(language: "es-MX")
+        utterance.pitchMultiplier = 0.5
         synthesizer.speak(utterance)
     }
     
