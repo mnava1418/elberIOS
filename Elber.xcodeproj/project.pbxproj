@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		50992E2F2593FD260077A203 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50992E2E2593FD260077A203 /* AppDelegate.swift */; };
 		50992E312593FD260077A203 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50992E302593FD260077A203 /* SceneDelegate.swift */; };
-		50992E332593FD260077A203 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50992E322593FD260077A203 /* ViewController.swift */; };
 		50992E362593FD260077A203 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50992E342593FD260077A203 /* Main.storyboard */; };
 		50992E382593FD280077A203 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50992E372593FD280077A203 /* Assets.xcassets */; };
 		50992E3B2593FD280077A203 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50992E392593FD280077A203 /* LaunchScreen.storyboard */; };
@@ -22,6 +21,7 @@
 		50992E582593FD2B0077A203 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50992E572593FD2B0077A203 /* NotificationController.swift */; };
 		50992E5A2593FD2B0077A203 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50992E592593FD2B0077A203 /* ComplicationController.swift */; };
 		50992E5C2593FD2D0077A203 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50992E5B2593FD2D0077A203 /* Assets.xcassets */; };
+		50992E7425940E610077A203 /* ElberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50992E7325940E610077A203 /* ElberViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +70,6 @@
 		50992E2B2593FD260077A203 /* Elber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50992E2E2593FD260077A203 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50992E302593FD260077A203 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		50992E322593FD260077A203 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		50992E352593FD260077A203 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		50992E372593FD280077A203 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50992E3A2593FD280077A203 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -87,6 +86,7 @@
 		50992E5B2593FD2D0077A203 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50992E5D2593FD2D0077A203 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50992E5E2593FD2D0077A203 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		50992E7325940E610077A203 /* ElberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElberViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,9 +130,9 @@
 		50992E2D2593FD260077A203 /* Elber */ = {
 			isa = PBXGroup;
 			children = (
+				50992E7225940E470077A203 /* View */,
 				50992E2E2593FD260077A203 /* AppDelegate.swift */,
 				50992E302593FD260077A203 /* SceneDelegate.swift */,
-				50992E322593FD260077A203 /* ViewController.swift */,
 				50992E342593FD260077A203 /* Main.storyboard */,
 				50992E372593FD280077A203 /* Assets.xcassets */,
 				50992E392593FD280077A203 /* LaunchScreen.storyboard */,
@@ -163,6 +163,14 @@
 				50992E5E2593FD2D0077A203 /* PushNotificationPayload.apns */,
 			);
 			path = "Elber WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		50992E7225940E470077A203 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				50992E7325940E610077A203 /* ElberViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,7 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50992E332593FD260077A203 /* ViewController.swift in Sources */,
+				50992E7425940E610077A203 /* ElberViewController.swift in Sources */,
 				50992E2F2593FD260077A203 /* AppDelegate.swift in Sources */,
 				50992E312593FD260077A203 /* SceneDelegate.swift in Sources */,
 			);
