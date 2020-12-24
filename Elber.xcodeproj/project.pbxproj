@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		506358A3259532400064E103 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506358A2259532400064E103 /* AudioController.swift */; };
+		506358A7259533640064E103 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506358A2259532400064E103 /* AudioController.swift */; };
 		50992E2F2593FD260077A203 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50992E2E2593FD260077A203 /* AppDelegate.swift */; };
 		50992E312593FD260077A203 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50992E302593FD260077A203 /* SceneDelegate.swift */; };
 		50992E362593FD260077A203 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50992E342593FD260077A203 /* Main.storyboard */; };
@@ -68,6 +70,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		506358A2259532400064E103 /* AudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
 		50992E2B2593FD260077A203 /* Elber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50992E2E2593FD260077A203 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50992E302593FD260077A203 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +112,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		506358A1259532240064E103 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				506358A2259532400064E103 /* AudioController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		50992E222593FD250077A203 = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +143,7 @@
 		50992E2D2593FD260077A203 /* Elber */ = {
 			isa = PBXGroup;
 			children = (
+				506358A1259532240064E103 /* Controller */,
 				50992E7225940E470077A203 /* View */,
 				50992E2E2593FD260077A203 /* AppDelegate.swift */,
 				50992E302593FD260077A203 /* SceneDelegate.swift */,
@@ -307,6 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				506358A3259532400064E103 /* AudioController.swift in Sources */,
 				50992E7425940E610077A203 /* ElberViewController.swift in Sources */,
 				50992E2F2593FD260077A203 /* AppDelegate.swift in Sources */,
 				509CFFCD259515C90040F04F /* ViewUtils.swift in Sources */,
@@ -318,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				506358A7259533640064E103 /* AudioController.swift in Sources */,
 				50992E582593FD2B0077A203 /* NotificationController.swift in Sources */,
 				50992E5A2593FD2B0077A203 /* ComplicationController.swift in Sources */,
 				50992E562593FD2B0077A203 /* ExtensionDelegate.swift in Sources */,

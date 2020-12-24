@@ -14,6 +14,7 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet weak var btnElber: WKInterfaceButton!
     @IBOutlet weak var listeningLabel: WKInterfaceLabel!
     
+    let audioController: AudioController = AudioController()
     var isListening = false
     
     override func awake(withContext context: Any?) {
@@ -34,6 +35,7 @@ class InterfaceController: WKInterfaceController {
             btnElber.setWidth(120)
             btnElber.setWidth(120)
             isListening = false
+            audioController.speak(message: "Listo pa lo que requiera jefe")
         } else {
             listeningLabel.setHidden(false)
             btnElber.setWidth(136)

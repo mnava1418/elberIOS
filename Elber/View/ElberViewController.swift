@@ -11,6 +11,7 @@ class ElberViewController: UIViewController {
 
     @IBOutlet weak var btnElber: UIButton!
     
+    let audioController: AudioController = AudioController()
     var isListening = false
     
     override func viewDidLoad() {
@@ -23,6 +24,7 @@ class ElberViewController: UIViewController {
         if isListening {
             btnElber.layer.removeAllAnimations()
             isListening = false
+            audioController.speak(message: "Aqui andamos al 100")
         } else {
             btnElber.animate()
             isListening = true
