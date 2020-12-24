@@ -21,7 +21,7 @@ struct AudioController {
         let audioSession = AVAudioSession.sharedInstance()
         do {
             try audioSession.setCategory(AVAudioSession.Category(rawValue: convertFromAVAudioSessionCategory(audioCategory)), mode: .default)
-            try audioSession.setMode(AVAudioSession.Mode.measurement)
+            try audioSession.setMode(AVAudioSession.Mode.default)
             try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
         } catch {
             fatalError("Error al inicializar audio session")
