@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		506358A3259532400064E103 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506358A2259532400064E103 /* AudioController.swift */; };
 		506358A7259533640064E103 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506358A2259532400064E103 /* AudioController.swift */; };
+		506358AC25955EF40064E103 /* SpeechController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506358AB25955EF40064E103 /* SpeechController.swift */; };
 		50992E2F2593FD260077A203 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50992E2E2593FD260077A203 /* AppDelegate.swift */; };
 		50992E312593FD260077A203 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50992E302593FD260077A203 /* SceneDelegate.swift */; };
 		50992E362593FD260077A203 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50992E342593FD260077A203 /* Main.storyboard */; };
@@ -71,6 +72,7 @@
 
 /* Begin PBXFileReference section */
 		506358A2259532400064E103 /* AudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
+		506358AB25955EF40064E103 /* SpeechController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechController.swift; sourceTree = "<group>"; };
 		50992E2B2593FD260077A203 /* Elber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50992E2E2593FD260077A203 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50992E302593FD260077A203 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				506358A2259532400064E103 /* AudioController.swift */,
+				506358AB25955EF40064E103 /* SpeechController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				50992E2F2593FD260077A203 /* AppDelegate.swift in Sources */,
 				509CFFCD259515C90040F04F /* ViewUtils.swift in Sources */,
 				50992E312593FD260077A203 /* SceneDelegate.swift in Sources */,
+				506358AC25955EF40064E103 /* SpeechController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

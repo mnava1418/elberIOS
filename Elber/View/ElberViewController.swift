@@ -11,26 +11,24 @@ class ElberViewController: UIViewController {
 
     @IBOutlet weak var btnElber: UIButton!
     
-    let audioController: AudioController = AudioController()
-    var isListening = false
+    var speechController: SpeechController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        speechController = SpeechController(btn: btnElber)
     }
     
     @IBAction func touchElber(_ sender: Any) {
-        if isListening {
-            btnElber.layer.removeAllAnimations()
-            isListening = false
-            audioController.speak(message: "Aqui andamos al 100")
+        if speechController!.audioEngine.isRunning {
+            speechController!.stopRecording()
         } else {
             btnElber.animate()
-            isListening = true
+            speechController!.startRecording()
         }
     }
- 
+    
     /*
     // MARK: - Navigation
 
@@ -40,7 +38,6 @@ class ElberViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
 
 extension UIButton {

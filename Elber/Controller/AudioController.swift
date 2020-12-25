@@ -19,7 +19,7 @@ struct AudioController {
         synthesizer.speak(utterance)
     }
     
-    private func prepareAudioSession(audioCategory: AVAudioSession.Category) {
+    public func prepareAudioSession(audioCategory: AVAudioSession.Category) {
         let audioSession = AVAudioSession.sharedInstance()
         do {
             try audioSession.setCategory(AVAudioSession.Category(rawValue: convertFromAVAudioSessionCategory(audioCategory)), mode: .default)
