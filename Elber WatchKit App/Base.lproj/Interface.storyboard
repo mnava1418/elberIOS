@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="17500"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
@@ -17,13 +16,9 @@
                                 <action selector="touchElber" destination="AgC-eL-Hgc" id="Fdu-im-dD8"/>
                             </connections>
                         </button>
-                        <label alignment="center" verticalAlignment="bottom" hidden="YES" text="Escuchando..." id="heI-9f-CiX">
-                            <color key="textColor" name="TextColor"/>
-                        </label>
                     </items>
                     <connections>
                         <outlet property="btnElber" destination="qTG-T3-82c" id="Ogu-tL-Tff"/>
-                        <outlet property="listeningLabel" destination="heI-9f-CiX" id="2Q9-OS-AC8"/>
                     </connections>
                 </controller>
             </objects>
@@ -63,8 +58,5 @@
     </scenes>
     <resources>
         <image name="elber" width="425" height="425"/>
-        <namedColor name="TextColor">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
     </resources>
 </document>

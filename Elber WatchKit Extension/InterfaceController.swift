@@ -12,10 +12,8 @@ import Foundation
 class InterfaceController: WKInterfaceController {
 
     @IBOutlet weak var btnElber: WKInterfaceButton!
-    @IBOutlet weak var listeningLabel: WKInterfaceLabel!
     
     let audioController: AudioController = AudioController()
-    var isListening = false
     
     override func awake(withContext context: Any?) {
         // Configure interface objects here.
@@ -30,17 +28,12 @@ class InterfaceController: WKInterfaceController {
     }
 
     @IBAction func touchElber() {
-        if isListening {
-            listeningLabel.setHidden(true)
-            btnElber.setWidth(120)
-            btnElber.setWidth(120)
-            isListening = false
-            audioController.speak(message: "Listo pa lo que requiera jefe")
-        } else {
-            listeningLabel.setHidden(false)
-            btnElber.setWidth(136)
-            btnElber.setWidth(136)
-            isListening = true
+        self.presentTextInputController(withSuggestions: ["Hola", "Huevos", "Gerardo es puto"], allowedInputMode: .plain) { (answers) in
+            if let options = answers, options.count > 0 {
+                if let message = options[0] as? String {
+                    self.audioController.speak(message: message)
+                }
+            }
         }
     }
 }
