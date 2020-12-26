@@ -11,6 +11,8 @@ import AVFoundation
 struct AudioController {
     let synthesizer:AVSpeechSynthesizer = AVSpeechSynthesizer()
     
+    static let sharedInstance:AudioController = AudioController()
+    
     public func speak(message:String){
         self.prepareAudioSession(audioCategory: AVAudioSession.Category.playback)
         let utterance = AVSpeechUtterance(string: message)
