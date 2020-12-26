@@ -18,6 +18,7 @@ class ElberViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         speechController = SpeechController(btn: btnElber)
+        SocketIOController.sharedInstance.startConnection()
     }
     
     @IBAction func touchElber(_ sender: Any) {

@@ -15,7 +15,6 @@ class SpeechController {
     var audioInputNode: AVAudioInputNode?
     var speechTimer:Timer?
     var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
-    let audioController: AudioController = AudioController()
     let audioEngine: AVAudioEngine = AVAudioEngine()
     let speechRecognizer: SFSpeechRecognizer? = SFSpeechRecognizer(locale: Locale.init(identifier:"es-mx"))
     let btnElber:UIButton!
@@ -37,15 +36,14 @@ class SpeechController {
             recognitionTask = nil
             
             if(err != nil) {
-                audioController.speak(message: "Perdona. No te entendí")
+                AudioController.sharedInstance.speak(message: "Perdona. No te entendí")
             }else{
                 let bestStr = res?.bestTranscription.formattedString
             
                 if let mensaje = bestStr {
-                    audioController.speak(message: mensaje)
-                    
+                    SocketIOController.sharedInstance.sendMessage(message: mensaje)
                 } else{
-                    audioController.speak(message: "Perdona. No te entendí")
+                    AudioController.sharedInstance.speak(message: "Perdona. No te entendí")
                 }
             }
         } else if( !isLast){
@@ -66,8 +64,7 @@ class SpeechController {
             recognitionTask = nil
         }
         
-        audioController.prepareAudioSession(audioCategory: AVAudioSession.Category.record)
-        
+        AudioController.sharedInstance.prepareAudioSession(audioCategory: AVAudioSession.Category.record)
         audioInputNode = audioEngine.inputNode
         recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
         

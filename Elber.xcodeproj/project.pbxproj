@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -28,6 +28,8 @@
 		50992E5C2593FD2D0077A203 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50992E5B2593FD2D0077A203 /* Assets.xcassets */; };
 		50992E7425940E610077A203 /* ElberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50992E7325940E610077A203 /* ElberViewController.swift */; };
 		509CFFCD259515C90040F04F /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509CFFCC259515C90040F04F /* ViewUtils.swift */; };
+		50F09B592597AD3900269A93 /* SocketIOController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F09B582597AD3900269A93 /* SocketIOController.swift */; };
+		50F09B5E2597ADF900269A93 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F09B5D2597ADF900269A93 /* Constants.swift */; };
 		75D7D07186B057C861C767EF /* Pods_Elber_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FC809A23A55A855D38B79E8 /* Pods_Elber_WatchKit_Extension.framework */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +100,8 @@
 		50992E5E2593FD2D0077A203 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		50992E7325940E610077A203 /* ElberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElberViewController.swift; sourceTree = "<group>"; };
 		509CFFCC259515C90040F04F /* ViewUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtils.swift; sourceTree = "<group>"; };
+		50F09B582597AD3900269A93 /* SocketIOController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketIOController.swift; sourceTree = "<group>"; };
+		50F09B5D2597ADF900269A93 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6FC809A23A55A855D38B79E8 /* Pods_Elber_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Elber_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7002C0520FAEF638F5F7B249 /* Pods-Elber.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Elber.release.xcconfig"; path = "Target Support Files/Pods-Elber/Pods-Elber.release.xcconfig"; sourceTree = "<group>"; };
 		9353ACA4B522148863486F3C /* Pods-Elber WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Elber WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-Elber WatchKit App/Pods-Elber WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
@@ -146,7 +150,6 @@
 				99EC1312FEFDA5826353C763 /* Pods-Elber WatchKit Extension.debug.xcconfig */,
 				9A199D54E9502BF0428BCB9A /* Pods-Elber WatchKit Extension.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -155,6 +158,8 @@
 			children = (
 				506358A2259532400064E103 /* AudioController.swift */,
 				506358AB25955EF40064E103 /* SpeechController.swift */,
+				50F09B582597AD3900269A93 /* SocketIOController.swift */,
+				50F09B5D2597ADF900269A93 /* Constants.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -463,10 +468,12 @@
 			files = (
 				506358A3259532400064E103 /* AudioController.swift in Sources */,
 				50992E7425940E610077A203 /* ElberViewController.swift in Sources */,
+				50F09B592597AD3900269A93 /* SocketIOController.swift in Sources */,
 				50992E2F2593FD260077A203 /* AppDelegate.swift in Sources */,
 				509CFFCD259515C90040F04F /* ViewUtils.swift in Sources */,
 				50992E312593FD260077A203 /* SceneDelegate.swift in Sources */,
 				506358AC25955EF40064E103 /* SpeechController.swift in Sources */,
+				50F09B5E2597ADF900269A93 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
