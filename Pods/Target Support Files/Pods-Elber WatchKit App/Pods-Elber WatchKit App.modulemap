@@ -1,0 +1,6 @@
+framework module Pods_Elber_WatchKit_App {
+  umbrella header "Pods-Elber WatchKit App-umbrella.h"
+
+  export *
+  module * { export * }
+}
