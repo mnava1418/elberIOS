@@ -23,5 +23,6 @@ target 'Elber WatchKit Extension' do
   use_frameworks!
 
   # Pods for Elber WatchKit Extension
+pod 'Socket.IO-Client-Swift'
 
 end

@@ -30,6 +30,8 @@
 		509CFFCD259515C90040F04F /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509CFFCC259515C90040F04F /* ViewUtils.swift */; };
 		50F09B592597AD3900269A93 /* SocketIOController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F09B582597AD3900269A93 /* SocketIOController.swift */; };
 		50F09B5E2597ADF900269A93 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F09B5D2597ADF900269A93 /* Constants.swift */; };
+		50F09B622597C0B600269A93 /* SocketIOController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F09B582597AD3900269A93 /* SocketIOController.swift */; };
+		50F09B702597C21500269A93 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F09B5D2597ADF900269A93 /* Constants.swift */; };
 		75D7D07186B057C861C767EF /* Pods_Elber_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FC809A23A55A855D38B79E8 /* Pods_Elber_WatchKit_Extension.framework */; };
 /* End PBXBuildFile section */
 
@@ -295,6 +297,7 @@
 				50992E4A2593FD2B0077A203 /* Sources */,
 				50992E4B2593FD2B0077A203 /* Frameworks */,
 				50992E4C2593FD2B0077A203 /* Resources */,
+				4F9648D05390FBA8FDBA92EA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -437,6 +440,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		4F9648D05390FBA8FDBA92EA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Elber WatchKit Extension/Pods-Elber WatchKit Extension-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Elber WatchKit Extension/Pods-Elber WatchKit Extension-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Elber WatchKit Extension/Pods-Elber WatchKit Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		EA7D8A2F0065FE2C5F6F7592 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -481,6 +501,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50F09B702597C21500269A93 /* Constants.swift in Sources */,
+				50F09B622597C0B600269A93 /* SocketIOController.swift in Sources */,
 				506358A7259533640064E103 /* AudioController.swift in Sources */,
 				50992E582593FD2B0077A203 /* NotificationController.swift in Sources */,
 				50992E5A2593FD2B0077A203 /* ComplicationController.swift in Sources */,

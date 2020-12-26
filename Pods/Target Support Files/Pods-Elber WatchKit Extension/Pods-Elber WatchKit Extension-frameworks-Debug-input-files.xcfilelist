@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-Elber WatchKit Extension/Pods-Elber WatchKit Extension-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift-watchOS/SocketIO.framework
+${BUILT_PRODUCTS_DIR}/Starscream-watchOS/Starscream.framework

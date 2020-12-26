@@ -161,12 +161,12 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift-iOS/SocketIO.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Starscream-iOS/Starscream.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift-watchOS/SocketIO.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Starscream-watchOS/Starscream.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift-iOS/SocketIO.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Starscream-iOS/Starscream.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift-watchOS/SocketIO.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Starscream-watchOS/Starscream.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
