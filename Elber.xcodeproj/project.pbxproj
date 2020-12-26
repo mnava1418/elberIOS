@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		251AD6D619D356FDF119DB39 /* Pods_Elber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC53D104D6E6E60F37B30D0 /* Pods_Elber.framework */; };
+		4891F67B41600FC65A56AF0C /* Pods_Elber_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA735206E849ACF3397CCFC /* Pods_Elber_WatchKit_App.framework */; };
 		506358A3259532400064E103 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506358A2259532400064E103 /* AudioController.swift */; };
 		506358A7259533640064E103 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506358A2259532400064E103 /* AudioController.swift */; };
 		506358AC25955EF40064E103 /* SpeechController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506358AB25955EF40064E103 /* SpeechController.swift */; };
@@ -26,6 +28,7 @@
 		50992E5C2593FD2D0077A203 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50992E5B2593FD2D0077A203 /* Assets.xcassets */; };
 		50992E7425940E610077A203 /* ElberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50992E7325940E610077A203 /* ElberViewController.swift */; };
 		509CFFCD259515C90040F04F /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509CFFCC259515C90040F04F /* ViewUtils.swift */; };
+		75D7D07186B057C861C767EF /* Pods_Elber_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FC809A23A55A855D38B79E8 /* Pods_Elber_WatchKit_Extension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +74,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		33415B4E6EA1D4E458409309 /* Pods-Elber WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Elber WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-Elber WatchKit App/Pods-Elber WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
 		506358A2259532400064E103 /* AudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
 		506358AB25955EF40064E103 /* SpeechController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechController.swift; sourceTree = "<group>"; };
 		50992E2B2593FD260077A203 /* Elber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elber.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,13 +98,30 @@
 		50992E5E2593FD2D0077A203 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		50992E7325940E610077A203 /* ElberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElberViewController.swift; sourceTree = "<group>"; };
 		509CFFCC259515C90040F04F /* ViewUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtils.swift; sourceTree = "<group>"; };
+		6FC809A23A55A855D38B79E8 /* Pods_Elber_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Elber_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7002C0520FAEF638F5F7B249 /* Pods-Elber.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Elber.release.xcconfig"; path = "Target Support Files/Pods-Elber/Pods-Elber.release.xcconfig"; sourceTree = "<group>"; };
+		9353ACA4B522148863486F3C /* Pods-Elber WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Elber WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-Elber WatchKit App/Pods-Elber WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
+		99EC1312FEFDA5826353C763 /* Pods-Elber WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Elber WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-Elber WatchKit Extension/Pods-Elber WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		9A199D54E9502BF0428BCB9A /* Pods-Elber WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Elber WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-Elber WatchKit Extension/Pods-Elber WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
+		9CA735206E849ACF3397CCFC /* Pods_Elber_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Elber_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E30EF18BEA41209DE7DA15CC /* Pods-Elber.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Elber.debug.xcconfig"; path = "Target Support Files/Pods-Elber/Pods-Elber.debug.xcconfig"; sourceTree = "<group>"; };
+		FAC53D104D6E6E60F37B30D0 /* Pods_Elber.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Elber.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1B639A14F30388DF8F941AB6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4891F67B41600FC65A56AF0C /* Pods_Elber_WatchKit_App.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		50992E282593FD260077A203 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				251AD6D619D356FDF119DB39 /* Pods_Elber.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,12 +129,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75D7D07186B057C861C767EF /* Pods_Elber_WatchKit_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22C5C061B7A960D7A8A8E579 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E30EF18BEA41209DE7DA15CC /* Pods-Elber.debug.xcconfig */,
+				7002C0520FAEF638F5F7B249 /* Pods-Elber.release.xcconfig */,
+				9353ACA4B522148863486F3C /* Pods-Elber WatchKit App.debug.xcconfig */,
+				33415B4E6EA1D4E458409309 /* Pods-Elber WatchKit App.release.xcconfig */,
+				99EC1312FEFDA5826353C763 /* Pods-Elber WatchKit Extension.debug.xcconfig */,
+				9A199D54E9502BF0428BCB9A /* Pods-Elber WatchKit Extension.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		506358A1259532240064E103 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +166,8 @@
 				50992E432593FD280077A203 /* Elber WatchKit App */,
 				50992E522593FD2B0077A203 /* Elber WatchKit Extension */,
 				50992E2C2593FD260077A203 /* Products */,
+				22C5C061B7A960D7A8A8E579 /* Pods */,
+				54D346921968F89FAAE25FCA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -191,6 +229,16 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		54D346921968F89FAAE25FCA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FAC53D104D6E6E60F37B30D0 /* Pods_Elber.framework */,
+				9CA735206E849ACF3397CCFC /* Pods_Elber_WatchKit_App.framework */,
+				6FC809A23A55A855D38B79E8 /* Pods_Elber_WatchKit_Extension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -198,10 +246,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50992E692593FD2D0077A203 /* Build configuration list for PBXNativeTarget "Elber" */;
 			buildPhases = (
+				25A5E46175AD28AAB6061B5B /* [CP] Check Pods Manifest.lock */,
 				50992E272593FD260077A203 /* Sources */,
 				50992E282593FD260077A203 /* Frameworks */,
 				50992E292593FD260077A203 /* Resources */,
 				50992E682593FD2D0077A203 /* Embed Watch Content */,
+				1AC53CD5E183115FF5E29041 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -217,8 +267,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50992E652593FD2D0077A203 /* Build configuration list for PBXNativeTarget "Elber WatchKit App" */;
 			buildPhases = (
+				24F4AB317C2DB42C852830ED /* [CP] Check Pods Manifest.lock */,
 				50992E3D2593FD280077A203 /* Resources */,
 				50992E642593FD2D0077A203 /* Embed App Extensions */,
+				1B639A14F30388DF8F941AB6 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -234,6 +286,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50992E612593FD2D0077A203 /* Build configuration list for PBXNativeTarget "Elber WatchKit Extension" */;
 			buildPhases = (
+				EA7D8A2F0065FE2C5F6F7592 /* [CP] Check Pods Manifest.lock */,
 				50992E4A2593FD2B0077A203 /* Sources */,
 				50992E4B2593FD2B0077A203 /* Frameworks */,
 				50992E4C2593FD2B0077A203 /* Resources */,
@@ -316,6 +369,92 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1AC53CD5E183115FF5E29041 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Elber/Pods-Elber-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Elber/Pods-Elber-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Elber/Pods-Elber-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		24F4AB317C2DB42C852830ED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Elber WatchKit App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		25A5E46175AD28AAB6061B5B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Elber-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA7D8A2F0065FE2C5F6F7592 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Elber WatchKit Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		50992E272593FD260077A203 /* Sources */ = {
@@ -499,6 +638,7 @@
 		};
 		50992E622593FD2D0077A203 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99EC1312FEFDA5826353C763 /* Pods-Elber WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
@@ -521,6 +661,7 @@
 		};
 		50992E632593FD2D0077A203 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A199D54E9502BF0428BCB9A /* Pods-Elber WatchKit Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
@@ -544,6 +685,7 @@
 		};
 		50992E662593FD2D0077A203 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9353ACA4B522148863486F3C /* Pods-Elber WatchKit App.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -564,6 +706,7 @@
 		};
 		50992E672593FD2D0077A203 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33415B4E6EA1D4E458409309 /* Pods-Elber WatchKit App.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -585,6 +728,7 @@
 		};
 		50992E6A2593FD2D0077A203 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E30EF18BEA41209DE7DA15CC /* Pods-Elber.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -606,6 +750,7 @@
 		};
 		50992E6B2593FD2D0077A203 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7002C0520FAEF638F5F7B249 /* Pods-Elber.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
