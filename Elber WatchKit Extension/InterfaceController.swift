@@ -19,11 +19,14 @@ class InterfaceController: WKInterfaceController {
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
-        SocketIOController.sharedInstance.startConnection()
     }
     
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
+    }
+    
+    override func didAppear() {
+        SocketIOController.sharedInstance.startConnection()
     }
 
     @IBAction func touchElber() {
