@@ -15,7 +15,7 @@ struct SocketIOController {
     static let sharedInstance:SocketIOController = SocketIOController()
     
     init() {
-        self.manager = SocketManager(socketURL: URL(string: Constants.HOST)!, config: [.log(true), .compress])
+        self.manager = SocketManager(socketURL: URL(string: Constants.HOST)!, config: [.log(false), .compress])
         self.socket = self.manager.defaultSocket
         
         socket.on(clientEvent: .connect) { (data, ack) in
@@ -39,7 +39,9 @@ struct SocketIOController {
     }
     
     func startConnection () {
-        socket.connect()
+        if socket.status != .connected {
+            socket.connect()
+        }
     }
     
     func sendMessage (message:String) {
