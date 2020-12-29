@@ -7,6 +7,7 @@ target 'Elber' do
 
   # Pods for Elber
 pod 'Socket.IO-Client-Swift'
+pod 'Alamofire'
 
 end
 
