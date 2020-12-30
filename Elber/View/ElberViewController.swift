@@ -6,19 +6,52 @@
 //
 
 import UIKit
+import WatchConnectivity
 
 class ElberViewController: UIViewController {
 
     @IBOutlet weak var btnElber: UIButton!
     
     var speechController: SpeechController?
+    var wcSession:WCSession!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         speechController = SpeechController(btn: btnElber)
-        SocketIOController.sharedInstance.startConnection()
+        
+        wcSession = WCSession.default
+        wcSession.delegate = self
+        wcSession.activate()
+        
+        validateToken()
+    }
+    
+    private func validateToken () {
+        if let token = AppController.getToken() {
+            SocketIOController.sharedInstance.startConnection()
+            sendMessageToWatch(message: ["token": token])
+        } else {
+            SocketIOController.sharedInstance.closeConnection()
+            UserModel.generateToken { (status, json) in
+                if status == 200 {
+                    let token = json["token"] as! String
+                    AppController.saveToken(token: token) {
+                        SocketIOController.sharedInstance.startConnection()
+                        self.sendMessageToWatch(message: ["token": token])
+                    }
+                }
+            }
+        }
+    }
+    
+    private func sendMessageToWatch(message: Dictionary<String, Any>) {
+        wcSession.sendMessage(message) { (response) in
+            print(response)
+        } errorHandler: { (error) in
+            print(error.localizedDescription)
+        }
     }
     
     @IBAction func touchElber(_ sender: Any) {
@@ -45,5 +78,19 @@ extension UIButton {
     func animate () {
         let animation = ViewUtils.getAnimation()
         self.layer.add(animation, forKey: "pulse")
+    }
+}
+
+extension ElberViewController: WCSessionDelegate {
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        print("session activated...")
+    }
+    
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        print("session become inactive...")
+    }
+    
+    func sessionDidDeactivate(_ session: WCSession) {
+        print("session deactivate...")
     }
 }
