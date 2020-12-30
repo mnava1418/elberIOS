@@ -39,18 +39,31 @@ struct SocketIOController {
     }
     
     func startConnection () {
-        if socket.status != .connected {
-            socket.connect()
+        if let _ = AppController.getToken() {
+            if socket.status != .connected {
+                socket.connect()
+            }
+        } else {
+            AudioController.sharedInstance.speak(message: "No se quien eres. Lárgate de aquí")
+        }
+    }
+    
+    func closeConnection () {
+        if socket.status == .connected {
+            socket.disconnect()
         }
     }
     
     func sendMessage (message:String) {
-        if(socket.status == SocketIOStatus.connected) {
-            socket.emit("elber request", message)
-            
+        if let token = AppController.getToken() {
+            if(socket.status == SocketIOStatus.connected) {
+                socket.emit("elber request", "\(token)|\(message)")
+            } else {
+                AudioController.sharedInstance.speak(message: "Ya se cayo esta madre. Intenta mas tarde")
+                startConnection()
+            }
         } else {
-            AudioController.sharedInstance.speak(message: "Ya se cayo esta madre. Intenta mas tarde")
-            startConnection()
+            AudioController.sharedInstance.speak(message: "No se quien eres. Lárgate de aquí")
         }
     }
 }
