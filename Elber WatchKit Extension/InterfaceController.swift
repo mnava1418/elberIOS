@@ -40,7 +40,7 @@ class InterfaceController: WKInterfaceController {
     }
 
     @IBAction func touchElber() {
-        self.presentTextInputController(withSuggestions: ["Hola", "Huevos", "Gerardo es puto"], allowedInputMode: .plain) { (answers) in
+        self.presentTextInputController(withSuggestions: ["Que hora es?", "Hola", "Gerardo es puto"], allowedInputMode: .plain) { (answers) in
             if let options = answers, options.count > 0 {
                 if let message = options[0] as? String {
                     SocketIOController.sharedInstance.sendMessage(message: message)
