@@ -32,8 +32,12 @@ struct SocketIOController {
         
         socket.on("elber response") { (data, ack) in
             if data.count > 0 {
-                AudioController.sharedInstance.speak(message: data[0] as! String)
-                ack.with("Got the response")
+                let response = data[0] as! Dictionary<String, Any>
+                if let elberResponse = response["elberResponse"] as? String {
+                    AudioController.sharedInstance.speak(message: elberResponse)
+                } else {
+                    AudioController.sharedInstance.speak(message: "Ya valió, échale un ojo a tus logs")
+                }
             }
         }
     }
