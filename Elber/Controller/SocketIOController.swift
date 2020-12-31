@@ -20,6 +20,7 @@ struct SocketIOController {
         
         socket.on(clientEvent: .connect) { (data, ack) in
             print("Client connected...")
+            AudioController.sharedInstance.speak(message: "Estoy listo!")
         }
         
         socket.on(clientEvent: .error) { (data, ack) in
