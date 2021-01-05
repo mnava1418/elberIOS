@@ -12,6 +12,8 @@
 		506358A3259532400064E103 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506358A2259532400064E103 /* AudioController.swift */; };
 		506358A7259533640064E103 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506358A2259532400064E103 /* AudioController.swift */; };
 		506358AC25955EF40064E103 /* SpeechController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506358AB25955EF40064E103 /* SpeechController.swift */; };
+		5075174725A4F196009E8C8E /* ElberController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5075174625A4F196009E8C8E /* ElberController.swift */; };
+		5075174C25A4F555009E8C8E /* CryptoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5075174B25A4F555009E8C8E /* CryptoViewController.swift */; };
 		5080E68F259AB5FA00155F22 /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5080E68E259AB5FA00155F22 /* AppController.swift */; };
 		50992E2F2593FD260077A203 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50992E2E2593FD260077A203 /* AppDelegate.swift */; };
 		50992E312593FD260077A203 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50992E302593FD260077A203 /* SceneDelegate.swift */; };
@@ -87,6 +89,8 @@
 		33415B4E6EA1D4E458409309 /* Pods-Elber WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Elber WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-Elber WatchKit App/Pods-Elber WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
 		506358A2259532400064E103 /* AudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
 		506358AB25955EF40064E103 /* SpeechController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechController.swift; sourceTree = "<group>"; };
+		5075174625A4F196009E8C8E /* ElberController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElberController.swift; sourceTree = "<group>"; };
+		5075174B25A4F555009E8C8E /* CryptoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoViewController.swift; sourceTree = "<group>"; };
 		5080E68E259AB5FA00155F22 /* AppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
 		50992E2B2593FD260077A203 /* Elber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50992E2E2593FD260077A203 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -178,6 +182,7 @@
 				5080E68E259AB5FA00155F22 /* AppController.swift */,
 				50BE2862259BCB53003DC120 /* NetworkController.swift */,
 				50BE2877259BD7ED003DC120 /* Tokens.swift */,
+				5075174625A4F196009E8C8E /* ElberController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -252,6 +257,7 @@
 			children = (
 				50992E7325940E610077A203 /* ElberViewController.swift */,
 				509CFFCC259515C90040F04F /* ViewUtils.swift */,
+				5075174B25A4F555009E8C8E /* CryptoViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -517,12 +523,14 @@
 				50BE2863259BCB53003DC120 /* NetworkController.swift in Sources */,
 				506358A3259532400064E103 /* AudioController.swift in Sources */,
 				50992E7425940E610077A203 /* ElberViewController.swift in Sources */,
+				5075174C25A4F555009E8C8E /* CryptoViewController.swift in Sources */,
 				50F09B592597AD3900269A93 /* SocketIOController.swift in Sources */,
 				50992E2F2593FD260077A203 /* AppDelegate.swift in Sources */,
 				509CFFCD259515C90040F04F /* ViewUtils.swift in Sources */,
 				5080E68F259AB5FA00155F22 /* AppController.swift in Sources */,
 				50992E312593FD260077A203 /* SceneDelegate.swift in Sources */,
 				506358AC25955EF40064E103 /* SpeechController.swift in Sources */,
+				5075174725A4F196009E8C8E /* ElberController.swift in Sources */,
 				50F09B5E2597ADF900269A93 /* Constants.swift in Sources */,
 				50BE2886259BDF7E003DC120 /* UserModel.swift in Sources */,
 				50BE2878259BD7ED003DC120 /* Tokens.swift in Sources */,

@@ -7,6 +7,7 @@
 
 import UIKit
 import WatchConnectivity
+import AVFoundation
 
 class ElberViewController: UIViewController {
 
@@ -14,12 +15,16 @@ class ElberViewController: UIViewController {
     
     var socketController: SocketIOController!
     var speechController: SpeechController!
+    var elberController: ElberController!
     var wcSession:WCSession!
+    var localFunction:String?
+    var localParameters:Dictionary<String, Any>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        elberController = ElberController(viewController: self)
         socketController = SocketIOController()
         speechController = SpeechController(btn: btnElber, socket: socketController)
         
@@ -61,6 +66,7 @@ class ElberViewController: UIViewController {
     
     @IBAction func touchElber(_ sender: Any) {
         if speechController!.audioEngine.isRunning {
+            self.btnElber.isEnabled = false
             speechController!.stopRecording()
         } else {
             btnElber.animate()
@@ -70,22 +76,38 @@ class ElberViewController: UIViewController {
                     elberResponse = error
                 } else {
                     elberResponse = response["elberResponse"] as! String
+                    self.localFunction = response["localFunction"] as? String
+                    self.localParameters = response["parameters"] as? Dictionary<String, Any>
                 }
                 
                 AudioController.sharedInstance.speak(message: elberResponse)
+                
+                if let function = self.localFunction, let parameters = self.localParameters {
+                    self.elberController.processResponse(localFunction: function, parameters: parameters)
+                }
+                
+                self.localFunction = nil
+                self.localParameters = nil
+                self.btnElber.isEnabled = true
             }
         }
     }
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        switch localFunction {
+        case ElberControllerLocalFunctions.showCrypto.rawValue:
+            let destination = segue.destination as! CryptoViewController
+            destination.data = self.localParameters
+        default:
+            print("Nothing to prepare...")
+        }
     }
-    */
 }
 
 extension UIButton {
