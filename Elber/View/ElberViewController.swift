@@ -12,33 +12,38 @@ class ElberViewController: UIViewController {
 
     @IBOutlet weak var btnElber: UIButton!
     
-    var speechController: SpeechController?
+    var socketController: SocketIphoneController!
+    var speechController: SpeechController!
     var wcSession:WCSession!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        speechController = SpeechController(btn: btnElber)
+        socketController = SocketIphoneController(source: .iphoneVoice, view: self)
+        speechController = SpeechController(btn: btnElber, socket: socketController)
         
         wcSession = WCSession.default
         wcSession.delegate = self
         wcSession.activate()
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         validateToken()
     }
     
     private func validateToken () {
         if let token = AppController.getToken() {
-            SocketIOController.sharedInstance.startConnection()
+            self.socketController.startConnection()
             sendMessageToWatch(message: ["token": token])
         } else {
-            SocketIOController.sharedInstance.closeConnection()
+            self.socketController.closeConnection()
             UserModel.generateToken { (status, json) in
                 if status == 200 {
                     let token = json["token"] as! String
                     AppController.saveToken(token: token) {
-                        SocketIOController.sharedInstance.startConnection()
+                        self.socketController.startConnection()
                         self.sendMessageToWatch(message: ["token": token])
                     }
                 }
