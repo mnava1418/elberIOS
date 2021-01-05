@@ -39,6 +39,7 @@ class SpeechController {
             
             if(err != nil) {
                 AudioController.sharedInstance.speak(message: "Perdona. No te entendí")
+                self.btnElber.isEnabled = true
             }else{
                 let bestStr = res?.bestTranscription.formattedString
             
@@ -48,6 +49,7 @@ class SpeechController {
                     }
                 } else{
                     AudioController.sharedInstance.speak(message: "Perdona. No te entendí")
+                    self.btnElber.isEnabled = true
                 }
             }
         } else if( !isLast){
