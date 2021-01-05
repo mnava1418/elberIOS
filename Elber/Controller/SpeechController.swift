@@ -18,9 +18,11 @@ class SpeechController {
     let audioEngine: AVAudioEngine = AVAudioEngine()
     let speechRecognizer: SFSpeechRecognizer? = SFSpeechRecognizer(locale: Locale.init(identifier:"es-mx"))
     let btnElber:UIButton!
+    let socketController:SocketIphoneController!
     
-    init(btn: UIButton) {
-        btnElber = btn
+    init(btn: UIButton, socket: SocketIphoneController) {
+        self.btnElber = btn
+        self.socketController = socket
     }
     
     private func recognitionTaskHandler(res: SFSpeechRecognitionResult?, err: Error?) {
@@ -41,7 +43,7 @@ class SpeechController {
                 let bestStr = res?.bestTranscription.formattedString
             
                 if let mensaje = bestStr {
-                    SocketIOController.sharedInstance.sendMessage(message: mensaje)
+                    self.socketController.sendMessage(message: mensaje)
                 } else{
                     AudioController.sharedInstance.speak(message: "Perdona. No te entendí")
                 }

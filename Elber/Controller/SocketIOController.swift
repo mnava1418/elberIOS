@@ -8,15 +8,23 @@
 import Foundation
 import SocketIO
 
-struct SocketIOController {
+
+class SocketIOController {
+    
+    enum SocketSource {
+        case iphoneVoice
+        case iphoneText
+        case watchVoice
+    }
+    
     let manager:SocketManager!
     let socket:SocketIOClient!
+    let source:SocketSource!
     
-    static let sharedInstance:SocketIOController = SocketIOController()
-    
-    init() {
+    init(source: SocketSource) {
         self.manager = SocketManager(socketURL: URL(string: Constants.HOST)!, config: [.log(false), .compress])
         self.socket = self.manager.defaultSocket
+        self.source = source
         
         socket.on(clientEvent: .connect) { (data, ack) in
             print("Client connected...")
