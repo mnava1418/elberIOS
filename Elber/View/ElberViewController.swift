@@ -20,7 +20,7 @@ class ElberViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        socketController = SocketIOController(source: .iphoneVoice)
+        socketController = SocketIOController()
         speechController = SpeechController(btn: btnElber, socket: socketController)
         
         wcSession = WCSession.default
@@ -64,7 +64,16 @@ class ElberViewController: UIViewController {
             speechController!.stopRecording()
         } else {
             btnElber.animate()
-            speechController!.startRecording()
+            speechController!.startRecording { (response) in
+                var elberResponse = ""
+                if let error = response["error"] as? String {
+                    elberResponse = error
+                } else {
+                    elberResponse = response["elberResponse"] as! String
+                }
+                
+                AudioController.sharedInstance.speak(message: elberResponse)
+            }
         }
     }
     

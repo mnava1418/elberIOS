@@ -20,7 +20,7 @@ class InterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         // Configure interface objects here.
         super.awake(withContext: context)
-        socketController = SocketIOController(source: .watchVoice)
+        socketController = SocketIOController()
     }
     
     override func willActivate() {
@@ -38,10 +38,19 @@ class InterfaceController: WKInterfaceController {
     }
 
     @IBAction func touchElber() {
-        self.presentTextInputController(withSuggestions: ["Que hora es?", "Hola", "Gerardo es puto"], allowedInputMode: .plain) { (answers) in
+        self.presentTextInputController(withSuggestions: ["Precio del Bitcoin", "Hola", "Gerardo es puto"], allowedInputMode: .plain) { (answers) in
             if let options = answers, options.count > 0 {
                 if let message = options[0] as? String {
-                    self.socketController.sendMessage(message: message)
+                    self.socketController.sendMessage(message: message) { (response) in
+                        var elberResponse = ""
+                        if let error = response["error"] as? String {
+                            elberResponse = error
+                        } else {
+                            elberResponse = response["elberResponse"] as! String
+                        }
+                        
+                        AudioController.sharedInstance.speak(message: elberResponse)
+                    }
                 }
             }
         }

@@ -25,7 +25,7 @@ class SpeechController {
         self.socketController = socket
     }
     
-    private func recognitionTaskHandler(res: SFSpeechRecognitionResult?, err: Error?) {
+    private func recognitionTaskHandler(res: SFSpeechRecognitionResult?, err: Error?, completion: @escaping(Dictionary<String, Any>) -> Void) {
         var isLast = false
         if res != nil {
             isLast = (res?.isFinal)!
@@ -43,7 +43,9 @@ class SpeechController {
                 let bestStr = res?.bestTranscription.formattedString
             
                 if let mensaje = bestStr {
-                    self.socketController.sendMessage(message: mensaje)
+                    self.socketController.sendMessage(message: mensaje) { (response) in
+                        completion(response)
+                    }
                 } else{
                     AudioController.sharedInstance.speak(message: "Perdona. No te entendí")
                 }
@@ -60,7 +62,7 @@ class SpeechController {
         recognitionRequest?.endAudio()
     }
     
-    public func startRecording() {
+    public func startRecording(completion: @escaping(Dictionary<String, Any>) -> Void) {
         if let _ = recognitionTask {
             recognitionTask!.cancel()
             recognitionTask = nil
@@ -77,7 +79,9 @@ class SpeechController {
         recRequest.shouldReportPartialResults = true
         recognitionTask = speechRecognizer?.recognitionTask(with: recRequest) {
             res, err in
-            self.recognitionTaskHandler(res: res, err: err)
+            self.recognitionTaskHandler(res: res, err: err) { (response) in
+                completion(response)
+            }
         }
         
         let format = audioInputNode?.outputFormat(forBus: 0)
