@@ -18,9 +18,9 @@ class SpeechController {
     let audioEngine: AVAudioEngine = AVAudioEngine()
     let speechRecognizer: SFSpeechRecognizer? = SFSpeechRecognizer(locale: Locale.init(identifier:"es-mx"))
     let btnElber:UIButton!
-    let socketController:SocketIphoneController!
+    let socketController:SocketIOController!
     
-    init(btn: UIButton, socket: SocketIphoneController) {
+    init(btn: UIButton, socket: SocketIOController) {
         self.btnElber = btn
         self.socketController = socket
     }

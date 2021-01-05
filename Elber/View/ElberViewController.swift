@@ -12,7 +12,7 @@ class ElberViewController: UIViewController {
 
     @IBOutlet weak var btnElber: UIButton!
     
-    var socketController: SocketIphoneController!
+    var socketController: SocketIOController!
     var speechController: SpeechController!
     var wcSession:WCSession!
     
@@ -20,7 +20,7 @@ class ElberViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        socketController = SocketIphoneController(source: .iphoneVoice, view: self)
+        socketController = SocketIOController(source: .iphoneVoice)
         speechController = SpeechController(btn: btnElber, socket: socketController)
         
         wcSession = WCSession.default
