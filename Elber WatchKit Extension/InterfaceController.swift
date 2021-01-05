@@ -15,15 +15,18 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet weak var btnElber: WKInterfaceButton!
     
     var wcSession : WCSession!
+    var socketController: SocketIOController!
     
     override func awake(withContext context: Any?) {
         // Configure interface objects here.
         super.awake(withContext: context)
+        socketController = SocketIOController(source: .watchVoice)
     }
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        socketController.startConnection()
         wcSession = WCSession.default
         wcSession.delegate = self
         wcSession.activate()
@@ -33,17 +36,12 @@ class InterfaceController: WKInterfaceController {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
-    
-    override func didAppear() {
-        super.didAppear()
-        SocketIOController.sharedInstance.startConnection()
-    }
 
     @IBAction func touchElber() {
         self.presentTextInputController(withSuggestions: ["Que hora es?", "Hola", "Gerardo es puto"], allowedInputMode: .plain) { (answers) in
             if let options = answers, options.count > 0 {
                 if let message = options[0] as? String {
-                    SocketIOController.sharedInstance.sendMessage(message: message)
+                    self.socketController.sendMessage(message: message)
                 }
             }
         }
@@ -58,7 +56,7 @@ extension InterfaceController: WCSessionDelegate {
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
         if let token = message["token"] as? String {
             AppController.saveToken(token: token) {
-                SocketIOController.sharedInstance.startConnection()
+                socketController.startConnection()
             }
         }
         replyHandler(["ok":"ok"])

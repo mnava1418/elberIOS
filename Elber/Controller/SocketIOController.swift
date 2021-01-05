@@ -32,11 +32,7 @@ class SocketIOController {
         }
         
         socket.on(clientEvent: .error) { (data, ack) in
-            print("Error: \(data)")
-        }
-        
-        socket.on(clientEvent: .disconnect) { (data, ack) in
-            print("Client disconnected...")
+            AudioController.sharedInstance.speak(message: "No me puedo conectar!")
         }
         
         socket.on("elber response") { (data, ack) in
