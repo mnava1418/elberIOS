@@ -1,4 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-Elber/Pods-Elber-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/Charts/Charts.framework
 ${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift-iOS/SocketIO.framework
 ${BUILT_PRODUCTS_DIR}/Starscream-iOS/Starscream.framework

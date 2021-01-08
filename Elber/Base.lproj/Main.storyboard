@@ -101,7 +101,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bitcoin" translatesAutoresizingMaskIntoConstraints="NO" id="jwF-Rh-0Q1">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BTC" translatesAutoresizingMaskIntoConstraints="NO" id="jwF-Rh-0Q1">
                                 <rect key="frame" x="139" y="56" width="136" height="136"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="136" id="1Mm-UU-bOo"/>
@@ -115,39 +115,39 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buy Price:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4h-P5-aaM">
-                                <rect key="frame" x="16" y="314" width="182.5" height="20"/>
+                                <rect key="frame" x="16" y="298" width="182.5" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" name="TextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GwF-VI-YWL">
-                                <rect key="frame" x="215.5" y="314" width="182.5" height="20"/>
+                                <rect key="frame" x="207.5" y="298" width="190.5" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" name="TextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="muT-GM-lEP">
-                                <rect key="frame" x="215.5" y="358" width="182.5" height="20"/>
+                                <rect key="frame" x="207.5" y="326" width="190.5" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" name="TextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sell Price:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXU-Ef-l3A">
-                                <rect key="frame" x="16" y="358" width="182.5" height="20"/>
+                                <rect key="frame" x="16" y="326" width="182.5" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" name="TextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lWD-QM-I52">
-                                <rect key="frame" x="206.5" y="290" width="1" height="120"/>
+                                <rect key="frame" x="206.5" y="290" width="1" height="80"/>
                                 <color key="backgroundColor" name="MainBackground"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="1" id="BEd-FS-hR2"/>
-                                    <constraint firstAttribute="height" constant="120" id="fl7-Wa-pN6"/>
+                                    <constraint firstAttribute="height" constant="80" id="fl7-Wa-pN6"/>
                                 </constraints>
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="UqD-za-KDf">
-                                <rect key="frame" x="130.5" y="426" width="153" height="32"/>
+                                <rect key="frame" x="130.5" y="386" width="153" height="32"/>
                                 <color key="backgroundColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <segments>
                                     <segment title="1 semana"/>
@@ -162,6 +162,11 @@
                                 <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zqd-ql-uj0" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="24" y="441" width="366" height="268"/>
+                                <color key="backgroundColor" name="MainBackground"/>
+                                <color key="tintColor" name="TextColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TeS-Oe-bCg"/>
                         <color key="backgroundColor" name="MainBackground"/>
@@ -171,15 +176,17 @@
                             <constraint firstItem="TeS-Oe-bCg" firstAttribute="trailing" secondItem="h06-Dq-FWS" secondAttribute="trailing" constant="16" id="6s9-nb-DQC"/>
                             <constraint firstItem="a4h-P5-aaM" firstAttribute="leading" secondItem="TeS-Oe-bCg" secondAttribute="leading" constant="16" id="Bma-ZE-kj3"/>
                             <constraint firstItem="TeS-Oe-bCg" firstAttribute="trailing" secondItem="GwF-VI-YWL" secondAttribute="trailing" constant="16" id="ByW-Mg-BEl"/>
-                            <constraint firstItem="GwF-VI-YWL" firstAttribute="leading" secondItem="lWD-QM-I52" secondAttribute="trailing" constant="8" id="DN9-eB-mV1"/>
-                            <constraint firstItem="GwF-VI-YWL" firstAttribute="top" secondItem="h06-Dq-FWS" secondAttribute="bottom" constant="40" id="K6X-c0-p7F"/>
-                            <constraint firstItem="muT-GM-lEP" firstAttribute="leading" secondItem="lWD-QM-I52" secondAttribute="trailing" constant="8" id="Klj-GQ-7D2"/>
+                            <constraint firstItem="GwF-VI-YWL" firstAttribute="leading" secondItem="lWD-QM-I52" secondAttribute="trailing" id="DN9-eB-mV1"/>
+                            <constraint firstItem="GwF-VI-YWL" firstAttribute="top" secondItem="h06-Dq-FWS" secondAttribute="bottom" constant="24" id="K6X-c0-p7F"/>
+                            <constraint firstItem="muT-GM-lEP" firstAttribute="leading" secondItem="lWD-QM-I52" secondAttribute="trailing" id="Klj-GQ-7D2"/>
                             <constraint firstItem="WXU-Ef-l3A" firstAttribute="leading" secondItem="TeS-Oe-bCg" secondAttribute="leading" constant="16" id="LgX-9i-ewQ"/>
+                            <constraint firstItem="Zqd-ql-uj0" firstAttribute="top" secondItem="UqD-za-KDf" secondAttribute="bottom" constant="24" id="LyX-wv-m35"/>
                             <constraint firstItem="lWD-QM-I52" firstAttribute="leading" secondItem="WXU-Ef-l3A" secondAttribute="trailing" constant="8" id="SF8-Sy-ffc"/>
                             <constraint firstItem="jwF-Rh-0Q1" firstAttribute="centerX" secondItem="j2b-47-rxW" secondAttribute="centerX" id="Sgh-1a-xNC"/>
                             <constraint firstItem="UqD-za-KDf" firstAttribute="centerX" secondItem="j2b-47-rxW" secondAttribute="centerX" id="VJg-hw-Bfd"/>
                             <constraint firstItem="jwF-Rh-0Q1" firstAttribute="top" secondItem="TeS-Oe-bCg" secondAttribute="top" constant="56" id="Vwr-p8-dEn"/>
                             <constraint firstItem="lWD-QM-I52" firstAttribute="centerX" secondItem="j2b-47-rxW" secondAttribute="centerX" id="XBe-Ww-jGN"/>
+                            <constraint firstItem="TeS-Oe-bCg" firstAttribute="bottom" secondItem="Zqd-ql-uj0" secondAttribute="bottom" constant="16" id="Xkc-pc-KjX"/>
                             <constraint firstItem="TeS-Oe-bCg" firstAttribute="trailing" secondItem="muT-GM-lEP" secondAttribute="trailing" constant="16" id="Ynh-hH-g9P"/>
                             <constraint firstItem="l5n-eg-7fi" firstAttribute="leading" secondItem="TeS-Oe-bCg" secondAttribute="leading" constant="16" id="aQC-c4-Oam"/>
                             <constraint firstItem="UqD-za-KDf" firstAttribute="top" secondItem="lWD-QM-I52" secondAttribute="bottom" constant="16" id="c9w-lT-Yd9"/>
@@ -188,13 +195,16 @@
                             <constraint firstItem="a4h-P5-aaM" firstAttribute="centerY" secondItem="GwF-VI-YWL" secondAttribute="centerY" id="ei5-N7-uh9"/>
                             <constraint firstItem="lWD-QM-I52" firstAttribute="leading" secondItem="a4h-P5-aaM" secondAttribute="trailing" constant="8" id="g5S-IZ-b58"/>
                             <constraint firstItem="l5n-eg-7fi" firstAttribute="top" secondItem="jwF-Rh-0Q1" secondAttribute="bottom" constant="24" id="kok-eC-1hI"/>
-                            <constraint firstItem="muT-GM-lEP" firstAttribute="top" secondItem="GwF-VI-YWL" secondAttribute="bottom" constant="24" id="nKu-z5-tPC"/>
+                            <constraint firstItem="muT-GM-lEP" firstAttribute="top" secondItem="GwF-VI-YWL" secondAttribute="bottom" constant="8" id="nKu-z5-tPC"/>
+                            <constraint firstItem="TeS-Oe-bCg" firstAttribute="trailing" secondItem="Zqd-ql-uj0" secondAttribute="trailing" constant="24" id="usg-06-sN2"/>
                             <constraint firstItem="lWD-QM-I52" firstAttribute="top" secondItem="h06-Dq-FWS" secondAttribute="bottom" constant="16" id="vqn-Nq-srp"/>
+                            <constraint firstItem="Zqd-ql-uj0" firstAttribute="leading" secondItem="TeS-Oe-bCg" secondAttribute="leading" constant="24" id="xyk-ea-PE2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Crypto" id="M2q-PQ-yuO"/>
                     <connections>
                         <outlet property="buyPrice" destination="GwF-VI-YWL" id="7BO-6e-12q"/>
+                        <outlet property="chartView" destination="Zqd-ql-uj0" id="CLq-KV-YAf"/>
                         <outlet property="cryptoIcon" destination="jwF-Rh-0Q1" id="gKC-sL-gYW"/>
                         <outlet property="sellPrice" destination="muT-GM-lEP" id="Q0d-7u-dUK"/>
                         <outlet property="spotPrice" destination="h06-Dq-FWS" id="NUR-8z-OBL"/>
@@ -206,7 +216,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bitcoin" width="1200" height="1200"/>
+        <image name="BTC" width="1200" height="1200"/>
         <image name="elber" width="425" height="425"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <namedColor name="IconColor">

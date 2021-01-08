@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Charts
 
 class CryptoViewController: UIViewController {
 
@@ -13,6 +14,7 @@ class CryptoViewController: UIViewController {
     @IBOutlet weak var buyPrice: UILabel!
     @IBOutlet weak var sellPrice: UILabel!
     @IBOutlet weak var cryptoIcon: UIImageView!
+    @IBOutlet weak var chartView: LineChartView!
     
     var data:Dictionary<String, Any>?
     
@@ -35,7 +37,53 @@ class CryptoViewController: UIViewController {
             sellPrice.text = "\(sell) USD"
             cryptoIcon.image = UIImage(named: crypto)
             self.title = crypto
+            setChart()
         }
+    }
+    
+    private func setChart() {
+        chartView.noDataTextColor = UIColor(named: "TextColor")!
+        chartView.noDataText = "No pudimos obtener la data."
+        chartView.backgroundColor = UIColor(named: "MainBackground")!
+               
+        chartView.xAxis.drawGridLinesEnabled = false
+        chartView.xAxis.drawAxisLineEnabled = false
+        chartView.xAxis.drawLabelsEnabled = false
+        
+        chartView.leftAxis.drawGridLinesEnabled = false
+        chartView.leftAxis.drawAxisLineEnabled = false
+        chartView.leftAxis.drawLabelsEnabled = false
+        
+        chartView.rightAxis.drawGridLinesEnabled = false
+        chartView.rightAxis.drawAxisLineEnabled = false
+        chartView.rightAxis.drawLabelsEnabled = false
+        
+        chartView.data = getChartData()
+        chartView.animate(yAxisDuration: 2.0, easingOption: .easeInCirc)
+    }
+    
+    private func getChartData() -> LineChartData{
+        let values:[Double] = [1.0,5.0,8.0,2.0,3.0,1.0,5.0,8.0,2.0,3.0,1.0,5.0,8.0,2.0,3.0]
+        var dataEntries:[ChartDataEntry] = []
+        var count:Double = 1.0
+        
+        for i in 0..<values.count {
+            let dataEntry = ChartDataEntry(x: count, y: values[i])
+            dataEntries.append(dataEntry)
+            count += 1
+        }
+        
+        let chartDataSet = LineChartDataSet(entries: dataEntries, label: "")
+        chartDataSet.drawCirclesEnabled = false
+        chartDataSet.drawValuesEnabled = false
+        chartDataSet.mode = .cubicBezier
+        chartDataSet.cubicIntensity = 0.2
+        chartDataSet.lineWidth = 2
+        chartDataSet.colors = [UIColor(named: "IconColor")!]
+                
+        let chartData = LineChartData(dataSet: chartDataSet)
+                
+        return chartData
     }
     
 
