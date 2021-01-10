@@ -17,11 +17,16 @@ class CryptoViewController: UIViewController {
     @IBOutlet weak var chartView: LineChartView!
     
     var data:Dictionary<String, Any>?
+    var history:Dictionary<String, String> = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         setCrypto()
     }
     
@@ -31,6 +36,7 @@ class CryptoViewController: UIViewController {
             let spot = cryptoInfo["spot"] as! String
             let buy = cryptoInfo["buy"] as! String
             let sell = cryptoInfo["sell"] as! String
+            history = cryptoInfo["history"] as! Dictionary<String, String>
             
             spotPrice.text = "\(spot) USD"
             buyPrice.text = "\(buy) USD"
@@ -59,31 +65,39 @@ class CryptoViewController: UIViewController {
         chartView.rightAxis.drawLabelsEnabled = false
         
         chartView.data = getChartData()
-        chartView.animate(yAxisDuration: 2.0, easingOption: .easeInCirc)
+        chartView.animate(xAxisDuration: 1.0, easingOption: .linear)
     }
     
     private func getChartData() -> LineChartData{
-        let values:[Double] = [1.0,5.0,8.0,2.0,3.0,1.0,5.0,8.0,2.0,3.0,1.0,5.0,8.0,2.0,3.0]
-        var dataEntries:[ChartDataEntry] = []
-        var count:Double = 1.0
-        
-        for i in 0..<values.count {
-            let dataEntry = ChartDataEntry(x: count, y: values[i])
-            dataEntries.append(dataEntry)
-            count += 1
+        if !self.history.isEmpty {
+            
+            let sortedDates = history.keys.sorted()
+            var dataEntries:[ChartDataEntry] = []
+            var count = 1.0
+            
+            for i in 0..<history.count {
+                let currDate = sortedDates[i]
+                let price = Double(history[currDate]!)!
+                
+                let dataEntry = ChartDataEntry(x: count, y: price)
+                dataEntries.append(dataEntry)
+                count += 1
+            }
+            
+            let chartDataSet = LineChartDataSet(entries: dataEntries, label: "")
+            chartDataSet.drawCirclesEnabled = false
+            chartDataSet.drawValuesEnabled = false
+            chartDataSet.mode = .cubicBezier
+            chartDataSet.cubicIntensity = 0.2
+            chartDataSet.lineWidth = 3
+            chartDataSet.colors = [UIColor(named: "IconColor")!]
+                    
+            let chartData = LineChartData(dataSet: chartDataSet)
+                    
+            return chartData
+        } else {
+            return LineChartData()
         }
-        
-        let chartDataSet = LineChartDataSet(entries: dataEntries, label: "")
-        chartDataSet.drawCirclesEnabled = false
-        chartDataSet.drawValuesEnabled = false
-        chartDataSet.mode = .cubicBezier
-        chartDataSet.cubicIntensity = 0.2
-        chartDataSet.lineWidth = 2
-        chartDataSet.colors = [UIColor(named: "IconColor")!]
-                
-        let chartData = LineChartData(dataSet: chartDataSet)
-                
-        return chartData
     }
     
 
