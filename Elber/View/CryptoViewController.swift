@@ -66,7 +66,10 @@ class CryptoViewController: UIViewController {
         chartView.rightAxis.drawLabelsEnabled = false
         
         chartView.data = getChartData()
-        chartView.animate(xAxisDuration: 0.7, easingOption: .linear)
+        
+        if range > 7 {
+            chartView.animate(xAxisDuration: 0.5, easingOption: .linear)
+        }
     }
     
     private func getChartData() -> LineChartData{
