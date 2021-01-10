@@ -18,6 +18,7 @@ class CryptoViewController: UIViewController {
     
     var data:Dictionary<String, Any>?
     var history:Dictionary<String, String> = [:]
+    var range = 23
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,8 +40,8 @@ class CryptoViewController: UIViewController {
             history = cryptoInfo["history"] as! Dictionary<String, String>
             
             spotPrice.text = "\(spot) USD"
-            buyPrice.text = "\(buy) USD"
-            sellPrice.text = "\(sell) USD"
+            buyPrice.text = "Buy Price: \(buy) USD"
+            sellPrice.text = "Sell Price: \(sell) USD"
             cryptoIcon.image = UIImage(named: crypto)
             self.title = crypto
             setChart()
@@ -65,7 +66,7 @@ class CryptoViewController: UIViewController {
         chartView.rightAxis.drawLabelsEnabled = false
         
         chartView.data = getChartData()
-        chartView.animate(xAxisDuration: 1.0, easingOption: .linear)
+        chartView.animate(xAxisDuration: 0.7, easingOption: .linear)
     }
     
     private func getChartData() -> LineChartData{
@@ -75,10 +76,9 @@ class CryptoViewController: UIViewController {
             var dataEntries:[ChartDataEntry] = []
             var count = 1.0
             
-            for i in 0..<history.count {
+            for i in range..<history.count {
                 let currDate = sortedDates[i]
                 let price = Double(history[currDate]!)!
-                
                 let dataEntry = ChartDataEntry(x: count, y: price)
                 dataEntries.append(dataEntry)
                 count += 1
@@ -100,15 +100,15 @@ class CryptoViewController: UIViewController {
         }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func changeRange(_ sender: Any) {
+        let segmentedControl = sender as! UISegmentedControl
+        
+        if segmentedControl.selectedSegmentIndex == 0 {
+            range = 23
+        } else {
+            range = 0
+        }
+        
+        setChart()
     }
-    */
-
 }

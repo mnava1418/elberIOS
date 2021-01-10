@@ -60,7 +60,7 @@
             <objects>
                 <viewController id="SG0-he-lgC" customClass="ElberViewController" customModule="Elber" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eVh-zG-sdt">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zns-Kv-UCn">
@@ -98,7 +98,7 @@
             <objects>
                 <viewController id="nJp-Ej-dyJ" customClass="CryptoViewController" customModule="Elber" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="j2b-47-rxW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BTC" translatesAutoresizingMaskIntoConstraints="NO" id="jwF-Rh-0Q1">
@@ -135,6 +135,9 @@
                                 </segments>
                                 <color key="tintColor" name="MainBackground"/>
                                 <color key="selectedSegmentTintColor" name="IconColor"/>
+                                <connections>
+                                    <action selector="changeRange:" destination="nJp-Ej-dyJ" eventType="valueChanged" id="kP8-NA-gmz"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Último precio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5n-eg-7fi">
                                 <rect key="frame" x="16" y="216" width="382" height="18"/>
