@@ -67,7 +67,7 @@ class CryptoViewController: UIViewController {
         
         chartView.data = getChartData()
         
-        if range > 7 {
+        if range == 0 {
             chartView.animate(xAxisDuration: 0.5, easingOption: .linear)
         }
     }
@@ -92,7 +92,7 @@ class CryptoViewController: UIViewController {
             chartDataSet.drawValuesEnabled = false
             chartDataSet.mode = .cubicBezier
             chartDataSet.cubicIntensity = 0.2
-            chartDataSet.lineWidth = 3
+            chartDataSet.lineWidth = 2
             chartDataSet.colors = [UIColor(named: "IconColor")!]
                     
             let chartData = LineChartData(dataSet: chartDataSet)
