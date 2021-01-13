@@ -181,6 +181,7 @@
                         <outlet property="buyPrice" destination="GwF-VI-YWL" id="7BO-6e-12q"/>
                         <outlet property="chartView" destination="Zqd-ql-uj0" id="CLq-KV-YAf"/>
                         <outlet property="cryptoIcon" destination="jwF-Rh-0Q1" id="gKC-sL-gYW"/>
+                        <outlet property="priceDateLabel" destination="l5n-eg-7fi" id="Lmj-XG-30g"/>
                         <outlet property="sellPrice" destination="muT-GM-lEP" id="Q0d-7u-dUK"/>
                         <outlet property="spotPrice" destination="h06-Dq-FWS" id="NUR-8z-OBL"/>
                     </connections>

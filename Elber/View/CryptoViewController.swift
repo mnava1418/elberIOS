@@ -15,20 +15,20 @@ class CryptoViewController: UIViewController {
     @IBOutlet weak var sellPrice: UILabel!
     @IBOutlet weak var cryptoIcon: UIImageView!
     @IBOutlet weak var chartView: LineChartView!
+    @IBOutlet weak var priceDateLabel: UILabel!
     
     var data:Dictionary<String, Any>?
     var history:Dictionary<String, String> = [:]
     var range = 23
+    var sortedDates:[String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        chartView.delegate = self
         setCrypto()
+        
     }
     
     private func setCrypto() {
@@ -49,6 +49,7 @@ class CryptoViewController: UIViewController {
     }
     
     private func setChart() {
+        chartView.highlightValue(nil)
         chartView.noDataTextColor = UIColor(named: "TextColor")!
         chartView.noDataText = "No pudimos obtener la data."
         chartView.backgroundColor = UIColor(named: "MainBackground")!
@@ -75,7 +76,7 @@ class CryptoViewController: UIViewController {
     private func getChartData() -> LineChartData{
         if !self.history.isEmpty {
             
-            let sortedDates = history.keys.sorted()
+            sortedDates = history.keys.sorted()
             var dataEntries:[ChartDataEntry] = []
             var count = 1.0
             
@@ -112,6 +113,26 @@ class CryptoViewController: UIViewController {
             range = 0
         }
         
-        setChart()
+        setCrypto()
+    }
+}
+
+extension CryptoViewController: ChartViewDelegate {
+    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+        let index = self.range + Int(entry.x) - 1
+        let date = self.sortedDates[index]
+        let price = self.history[date]
+        
+        if index == self.sortedDates.count - 1 {
+            self.priceDateLabel.text = "Último precio"
+            self.spotPrice.text = "\(self.data!["spot"] as! String) USD"
+            self.buyPrice.text = "\(self.data!["buy"] as! String) USD"
+            self.sellPrice.text = "\(self.data!["sell"] as! String) USD"
+        } else {
+            self.priceDateLabel.text = date
+            self.spotPrice.text = "\(price!) USD"
+            self.buyPrice.text = "--"
+            self.sellPrice.text = "--"
+        }
     }
 }
