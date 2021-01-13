@@ -34,18 +34,19 @@ class CryptoViewController: UIViewController {
     private func setCrypto() {
         if let cryptoInfo = data, !cryptoInfo.isEmpty {
             let crypto = cryptoInfo["crypto"] as! String
-            let spot = cryptoInfo["spot"] as! String
-            let buy = cryptoInfo["buy"] as! String
-            let sell = cryptoInfo["sell"] as! String
             history = cryptoInfo["history"] as! Dictionary<String, String>
-            
-            spotPrice.text = "\(spot) USD"
-            buyPrice.text = "Buy Price: \(buy) USD"
-            sellPrice.text = "Sell Price: \(sell) USD"
             cryptoIcon.image = UIImage(named: crypto)
+            setCryptoLabels()
             self.title = crypto
             setChart()
         }
+    }
+    
+    private func setCryptoLabels() {
+        self.priceDateLabel.text = "Último precio"
+        self.spotPrice.text = "\(self.data!["spot"] as! String) USD"
+        self.buyPrice.text = "Buy Price: \(self.data!["buy"] as! String) USD"
+        self.sellPrice.text = "Sell Price: \(self.data!["sell"] as! String) USD"
     }
     
     private func setChart() {
@@ -124,10 +125,7 @@ extension CryptoViewController: ChartViewDelegate {
         let price = self.history[date]
         
         if index == self.sortedDates.count - 1 {
-            self.priceDateLabel.text = "Último precio"
-            self.spotPrice.text = "\(self.data!["spot"] as! String) USD"
-            self.buyPrice.text = "\(self.data!["buy"] as! String) USD"
-            self.sellPrice.text = "\(self.data!["sell"] as! String) USD"
+            setCryptoLabels()
         } else {
             self.priceDateLabel.text = date
             self.spotPrice.text = "\(price!) USD"
