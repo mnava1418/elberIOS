@@ -119,7 +119,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ElY-6V-UGL">
                                         <rect key="frame" x="0.0" y="660" width="414" height="65"/>
                                         <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="QL3-20-Ham">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QL3-20-Ham">
                                                 <rect key="frame" x="16" y="16" width="325" height="41"/>
                                                 <color key="backgroundColor" name="SeconBackground"/>
                                                 <color key="textColor" name="TextColor"/>
@@ -174,8 +174,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Chat" id="7AX-FR-HCZ"/>
                     <connections>
+                        <outlet property="chatView" destination="x9n-3f-fun" id="f3o-Sg-ySb"/>
                         <outlet property="chatViewBottom" destination="WFL-sD-E1q" id="KfD-X3-kYc"/>
                         <outlet property="textView" destination="QL3-20-Ham" id="81t-LJ-jvp"/>
+                        <outlet property="textViewHeight" destination="XWc-Lz-fep" id="Fee-3n-v1t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2dZ-Jh-YGR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -292,7 +294,7 @@
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="SeconBackground">
-            <color red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.12999999523162842" green="0.12999999523162842" blue="0.12999999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TextColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

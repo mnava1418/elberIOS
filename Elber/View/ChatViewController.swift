@@ -9,8 +9,14 @@ import UIKit
 
 class ChatViewController: UIViewController {
 
+    @IBOutlet weak var chatView: UIStackView!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var chatViewBottom: NSLayoutConstraint!
+    @IBOutlet weak var textViewHeight: NSLayoutConstraint!
+    
+    var textViewLines:CGFloat!
+    var minHeight:CGFloat!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,10 +28,26 @@ class ChatViewController: UIViewController {
     
     private func setTextView () {
         self.textView.layer.cornerRadius = 10
+        self.textView.delegate = self
+        self.textViewLines = 1
+        self.minHeight = textViewHeight.constant
     }
     
     private func addObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+    }
+    
+    private func adjustMessageView(increase: CGFloat) {
+        let maxHeight:CGFloat = 150
+        var newHeight = self.textViewHeight.constant + ( 25 * increase )
+        
+        if newHeight > maxHeight {
+            newHeight = maxHeight
+        } else if newHeight < minHeight {
+            newHeight = minHeight
+        }
+        
+        self.textViewHeight.constant = newHeight
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -42,6 +64,7 @@ class ChatViewController: UIViewController {
             let constant = keyboardHeight - safeHeight
             
             self.chatViewBottom.constant = constant
+            self.chatView.layoutIfNeeded()
         }
     }
     
@@ -55,4 +78,34 @@ class ChatViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+}
+
+extension ChatViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        let currNum = textView.numberOfLines()
+        if currNum != self.textViewLines {
+            let difference:CGFloat = currNum - self.textViewLines
+            self.adjustMessageView(increase: difference)
+            self.textViewLines = currNum
+        }
+    }
+}
+
+extension UITextView {
+    func numberOfLines() -> CGFloat {
+        let layoutManager = self.layoutManager
+        let numberOfGlyphs = layoutManager.numberOfGlyphs
+        var lineRange: NSRange = NSMakeRange(0, 1)
+        var index = 0
+        var numberOfLines:CGFloat = 0
+
+        while index < numberOfGlyphs {
+            layoutManager.lineFragmentRect(
+                forGlyphAt: index, effectiveRange: &lineRange
+            )
+            index = NSMaxRange(lineRange)
+            numberOfLines += 1
+        }
+        return numberOfLines
+    }
 }
