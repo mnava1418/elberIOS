@@ -87,11 +87,100 @@
                     <connections>
                         <outlet property="btnElber" destination="Zns-Kv-UCn" id="yW7-oE-dbv"/>
                         <segue destination="nJp-Ej-dyJ" kind="show" identifier="showCrypto" id="FgC-td-dJ0"/>
+                        <segue destination="JRH-db-aeO" kind="show" identifier="showChat" id="uQA-Ge-p1b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bwv-ZX-OxM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="364" y="15"/>
+        </scene>
+        <!--Chat-->
+        <scene sceneID="mx4-pY-hzz">
+            <objects>
+                <viewController id="JRH-db-aeO" customClass="ChatViewController" customModule="Elber" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nHY-9I-jf0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="x9n-3f-fun">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="71U-LG-8wD">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="659"/>
+                                        <color key="backgroundColor" name="MainBackground"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i3H-CK-ksu">
+                                        <rect key="frame" x="0.0" y="659" width="414" height="1"/>
+                                        <color key="backgroundColor" name="IconColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="Bef-Pu-C0U"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ElY-6V-UGL">
+                                        <rect key="frame" x="0.0" y="660" width="414" height="65"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="QL3-20-Ham">
+                                                <rect key="frame" x="16" y="16" width="325" height="41"/>
+                                                <color key="backgroundColor" name="SeconBackground"/>
+                                                <color key="textColor" name="TextColor"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="alphabet" keyboardAppearance="alert"/>
+                                            </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DAG-Yr-mII">
+                                                <rect key="frame" x="357" y="16.5" width="41" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="41" id="8rb-wp-uNO"/>
+                                                    <constraint firstAttribute="width" constant="41" id="k64-DT-Cyt"/>
+                                                </constraints>
+                                                <color key="tintColor" name="IconColor"/>
+                                                <state key="normal" backgroundImage="paperplane.circle" catalog="system"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" name="MainBackground"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="DAG-Yr-mII" secondAttribute="bottom" constant="8" id="6y9-kw-imb"/>
+                                            <constraint firstItem="QL3-20-Ham" firstAttribute="top" secondItem="ElY-6V-UGL" secondAttribute="top" constant="16" id="WeK-df-rTu"/>
+                                            <constraint firstAttribute="height" constant="65" id="XWc-Lz-fep"/>
+                                            <constraint firstItem="QL3-20-Ham" firstAttribute="leading" secondItem="ElY-6V-UGL" secondAttribute="leading" constant="16" id="YhR-rd-mpN"/>
+                                            <constraint firstAttribute="bottom" secondItem="QL3-20-Ham" secondAttribute="bottom" constant="8" id="bU2-9Q-Vow"/>
+                                            <constraint firstAttribute="trailing" secondItem="DAG-Yr-mII" secondAttribute="trailing" constant="16" id="iuE-Mx-iOX"/>
+                                            <constraint firstItem="DAG-Yr-mII" firstAttribute="leading" secondItem="QL3-20-Ham" secondAttribute="trailing" constant="16" id="tFX-Jx-Xfh"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" name="MainBackground"/>
+                                <constraints>
+                                    <constraint firstItem="i3H-CK-ksu" firstAttribute="top" secondItem="71U-LG-8wD" secondAttribute="bottom" id="292-W3-AkK"/>
+                                    <constraint firstItem="71U-LG-8wD" firstAttribute="leading" secondItem="x9n-3f-fun" secondAttribute="leading" id="4ce-y1-nNZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="ElY-6V-UGL" secondAttribute="bottom" id="6KL-Y5-rgq"/>
+                                    <constraint firstItem="ElY-6V-UGL" firstAttribute="leading" secondItem="x9n-3f-fun" secondAttribute="leading" id="7DO-7O-tXV"/>
+                                    <constraint firstAttribute="trailing" secondItem="ElY-6V-UGL" secondAttribute="trailing" id="UC7-v8-O4y"/>
+                                    <constraint firstItem="71U-LG-8wD" firstAttribute="top" secondItem="x9n-3f-fun" secondAttribute="top" id="XOC-VR-hfA"/>
+                                    <constraint firstItem="ElY-6V-UGL" firstAttribute="top" secondItem="i3H-CK-ksu" secondAttribute="bottom" id="ZTA-oh-e8n"/>
+                                    <constraint firstAttribute="trailing" secondItem="71U-LG-8wD" secondAttribute="trailing" id="dyi-1i-V4t"/>
+                                    <constraint firstItem="i3H-CK-ksu" firstAttribute="leading" secondItem="x9n-3f-fun" secondAttribute="leading" id="etb-Ci-fK2"/>
+                                    <constraint firstAttribute="trailing" secondItem="i3H-CK-ksu" secondAttribute="trailing" id="tb2-VT-kQZ"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Jxz-qN-dVp"/>
+                        <color key="backgroundColor" name="MainBackground"/>
+                        <constraints>
+                            <constraint firstItem="Jxz-qN-dVp" firstAttribute="bottom" secondItem="x9n-3f-fun" secondAttribute="bottom" id="WFL-sD-E1q"/>
+                            <constraint firstItem="x9n-3f-fun" firstAttribute="leading" secondItem="Jxz-qN-dVp" secondAttribute="leading" id="XHA-PU-7zd"/>
+                            <constraint firstItem="Jxz-qN-dVp" firstAttribute="trailing" secondItem="x9n-3f-fun" secondAttribute="trailing" id="deg-S2-Vdq"/>
+                            <constraint firstItem="x9n-3f-fun" firstAttribute="top" secondItem="Jxz-qN-dVp" secondAttribute="top" id="urb-DC-flK"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Chat" id="7AX-FR-HCZ"/>
+                    <connections>
+                        <outlet property="chatViewBottom" destination="WFL-sD-E1q" id="KfD-X3-kYc"/>
+                        <outlet property="textView" destination="QL3-20-Ham" id="81t-LJ-jvp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2dZ-Jh-YGR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="363.768115942029" y="780.80357142857144"/>
         </scene>
         <!--Crypto-->
         <scene sceneID="sgY-uZ-BhH">
@@ -195,11 +284,15 @@
         <image name="BTC" width="1200" height="1200"/>
         <image name="elber" width="425" height="425"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="paperplane.circle" catalog="system" width="128" height="121"/>
         <namedColor name="IconColor">
             <color red="1" green="0.57800000905990601" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="MainBackground">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SeconBackground">
+            <color red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TextColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

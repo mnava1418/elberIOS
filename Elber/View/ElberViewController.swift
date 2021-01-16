@@ -31,11 +31,23 @@ class ElberViewController: UIViewController {
         wcSession = WCSession.default
         wcSession.delegate = self
         wcSession.activate()
+        
+        setNavBar()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         validateToken()
+    }
+    
+    private func setNavBar() {
+        let chatImg = UIImage(systemName: "message")
+        let showChatBtn = UIBarButtonItem(image: chatImg, style: .plain, target: self, action: #selector(showChat))
+        self.navigationItem.rightBarButtonItem = showChatBtn
+    }
+    
+    @objc private func showChat() {
+        self.performSegue(withIdentifier: "showChat", sender: nil)
     }
     
     private func validateToken () {
@@ -107,6 +119,9 @@ class ElberViewController: UIViewController {
         default:
             print("Nothing to prepare...")
         }
+        
+        self.localFunction = nil
+        self.localParameters = nil
     }
 }
 
