@@ -28,6 +28,8 @@ class ChatViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var chatViewBottom: NSLayoutConstraint!
     @IBOutlet weak var textViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var textViewBottom: NSLayoutConstraint!
+    @IBOutlet weak var sendBtnBottom: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
     
     var textViewLines:CGFloat!
@@ -95,17 +97,20 @@ class ChatViewController: UIViewController {
             let keyboardHeight = keyboardScreenEndFrame.height
             let safeHeight = self.parent!.view.safeAreaInsets.bottom * 2
             let constant = keyboardHeight - safeHeight
-            adjustChatView(constant: constant)
+            adjustChatView(constant: constant, bottom: 0, height: 16)
         }
     }
     
     @objc func keyboardWillHide() {
-        adjustChatView(constant: 0)
+        adjustChatView(constant: 0, bottom: 16, height: 0)
         self.textView.resignFirstResponder()
     }
     
-    private func adjustChatView(constant:CGFloat) {
+    private func adjustChatView(constant:CGFloat, bottom:CGFloat, height:CGFloat) {
         self.chatViewBottom.constant = constant
+        self.textViewBottom.constant = bottom
+        self.sendBtnBottom.constant = bottom
+        self.textViewHeight.constant = minHeight - height
         self.chatView.layoutIfNeeded()
         
         if self.elberMessages.count > 0 {

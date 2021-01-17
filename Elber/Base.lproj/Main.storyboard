@@ -106,10 +106,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="71U-LG-8wD">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="659"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="651"/>
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uhg-fj-MrL">
-                                                <rect key="frame" x="8" y="8" width="398" height="643"/>
+                                                <rect key="frame" x="8" y="8" width="398" height="635"/>
                                                 <color key="backgroundColor" name="MainBackground"/>
                                             </tableView>
                                         </subviews>
@@ -122,14 +122,14 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i3H-CK-ksu">
-                                        <rect key="frame" x="0.0" y="659" width="414" height="1"/>
-                                        <color key="backgroundColor" name="IconColor"/>
+                                        <rect key="frame" x="0.0" y="651" width="414" height="1"/>
+                                        <color key="backgroundColor" name="SeconBackground"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="Bef-Pu-C0U"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ElY-6V-UGL">
-                                        <rect key="frame" x="0.0" y="660" width="414" height="65"/>
+                                        <rect key="frame" x="0.0" y="652" width="414" height="73"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QL3-20-Ham">
                                                 <rect key="frame" x="16" y="16" width="325" height="41"/>
@@ -153,11 +153,11 @@
                                         </subviews>
                                         <color key="backgroundColor" name="MainBackground"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="DAG-Yr-mII" secondAttribute="bottom" constant="8" id="6y9-kw-imb"/>
+                                            <constraint firstAttribute="bottom" secondItem="DAG-Yr-mII" secondAttribute="bottom" constant="16" id="6y9-kw-imb"/>
                                             <constraint firstItem="QL3-20-Ham" firstAttribute="top" secondItem="ElY-6V-UGL" secondAttribute="top" constant="16" id="WeK-df-rTu"/>
-                                            <constraint firstAttribute="height" constant="65" id="XWc-Lz-fep"/>
+                                            <constraint firstAttribute="height" constant="73" id="XWc-Lz-fep"/>
                                             <constraint firstItem="QL3-20-Ham" firstAttribute="leading" secondItem="ElY-6V-UGL" secondAttribute="leading" constant="16" id="YhR-rd-mpN"/>
-                                            <constraint firstAttribute="bottom" secondItem="QL3-20-Ham" secondAttribute="bottom" constant="8" id="bU2-9Q-Vow"/>
+                                            <constraint firstAttribute="bottom" secondItem="QL3-20-Ham" secondAttribute="bottom" constant="16" id="bU2-9Q-Vow"/>
                                             <constraint firstAttribute="trailing" secondItem="DAG-Yr-mII" secondAttribute="trailing" constant="16" id="iuE-Mx-iOX"/>
                                             <constraint firstItem="DAG-Yr-mII" firstAttribute="leading" secondItem="QL3-20-Ham" secondAttribute="trailing" constant="16" id="tFX-Jx-Xfh"/>
                                         </constraints>
@@ -191,8 +191,10 @@
                     <connections>
                         <outlet property="chatView" destination="x9n-3f-fun" id="f3o-Sg-ySb"/>
                         <outlet property="chatViewBottom" destination="WFL-sD-E1q" id="KfD-X3-kYc"/>
+                        <outlet property="sendBtnBottom" destination="6y9-kw-imb" id="L8d-RS-exN"/>
                         <outlet property="tableView" destination="uhg-fj-MrL" id="2gH-6P-Saq"/>
                         <outlet property="textView" destination="QL3-20-Ham" id="81t-LJ-jvp"/>
+                        <outlet property="textViewBottom" destination="bU2-9Q-Vow" id="yV4-AN-veT"/>
                         <outlet property="textViewHeight" destination="XWc-Lz-fep" id="Fee-3n-v1t"/>
                     </connections>
                 </viewController>
