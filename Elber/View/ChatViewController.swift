@@ -7,24 +7,49 @@
 
 import UIKit
 
+enum MessageType {
+    case sender
+    case receiver
+}
+
+struct ElberMessage {
+    let message:String
+    let type:MessageType
+    
+    init(message: String, type:MessageType) {
+        self.message = message
+        self.type = type
+    }
+}
+
 class ChatViewController: UIViewController {
 
     @IBOutlet weak var chatView: UIStackView!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var chatViewBottom: NSLayoutConstraint!
     @IBOutlet weak var textViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var tableView: UITableView!
     
     var textViewLines:CGFloat!
     var minHeight:CGFloat!
+    var elberMessages:[ElberMessage] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.title = "Chat"
-        setTextView()
         addObservers()
+        setTextView()
+        setTableView()
     }
+    
+    private func setTableView() {
+        tableView.register(UINib(nibName: "SendMessageTableViewCell", bundle: nil), forCellReuseIdentifier: "sendMessageCell")
+        tableView.dataSource = self
+        tableView.delegate = self
+    }
+    
     
     private func setTextView () {
         self.textView.layer.cornerRadius = 10
@@ -35,6 +60,10 @@ class ChatViewController: UIViewController {
     
     private func addObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+    }
+    
+    private func removeObservers() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
     }
     
     private func adjustMessageView(increase: CGFloat) {
@@ -52,7 +81,7 @@ class ChatViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        removeObservers()
     }
     
     @objc func keyboardWillShow(_ notification: Notification) {
@@ -68,7 +97,22 @@ class ChatViewController: UIViewController {
         }
     }
     
-
+    @IBAction func sendMessage(_ sender: Any) {
+        let message = textView.text.trimmingCharacters(in: .whitespacesAndNewlines)
+        self.textViewLines = 1
+        textView.text = ""
+        self.textViewHeight.constant = minHeight
+        
+        if message != "" {
+            let elberMessage = ElberMessage(message: message, type: .sender)
+            self.elberMessages.append(elberMessage)
+            
+            let indexPath = IndexPath(row: self.elberMessages.count - 1, section: 0)
+            self.tableView.insertRows(at: [indexPath], with: .right)
+            self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -83,7 +127,7 @@ class ChatViewController: UIViewController {
 extension ChatViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         let currNum = textView.numberOfLines()
-        if currNum != self.textViewLines {
+        if currNum != self.textViewLines && currNum > 0 {
             let difference:CGFloat = currNum - self.textViewLines
             self.adjustMessageView(increase: difference)
             self.textViewLines = currNum
@@ -107,5 +151,44 @@ extension UITextView {
             numberOfLines += 1
         }
         return numberOfLines
+    }
+}
+
+extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return elberMessages.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let elberMessage = elberMessages[indexPath.row]
+        return prepareSenderMessage(elberMessage: elberMessage, indexPath: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let elberMessage = elberMessages[indexPath.row]
+        let height = estimateFrameForText(text: elberMessage.message).height + 50
+        return height
+    }
+    
+    private func estimateFrameForText(text:String) -> CGRect{
+        let size = CGSize(width: 200, height: 1000)
+        let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
+        
+        return NSString(string: text).boundingRect(with: size, options: options, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17)], context: nil)
+    }
+    
+    private func prepareSenderMessage(elberMessage:ElberMessage, indexPath:IndexPath) -> SendMessageTableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "sendMessageCell", for: indexPath) as! SendMessageTableViewCell
+        
+        let width = estimateFrameForText(text: elberMessage.message).width + 30
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = UIColor(named: "MainBackground")
+        
+        cell.cellView.translatesAutoresizingMaskIntoConstraints = false
+        cell.cellView.widthAnchor.constraint(equalToConstant: width).isActive = true
+        cell.textView.text = elberMessage.message
+        cell.selectedBackgroundView = backgroundView
+        
+        return cell
     }
 }

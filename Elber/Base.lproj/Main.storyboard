@@ -107,7 +107,19 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="71U-LG-8wD">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="659"/>
+                                        <subviews>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uhg-fj-MrL">
+                                                <rect key="frame" x="8" y="8" width="398" height="643"/>
+                                                <color key="backgroundColor" name="MainBackground"/>
+                                            </tableView>
+                                        </subviews>
                                         <color key="backgroundColor" name="MainBackground"/>
+                                        <constraints>
+                                            <constraint firstItem="uhg-fj-MrL" firstAttribute="top" secondItem="71U-LG-8wD" secondAttribute="top" constant="8" id="1la-W2-bKP"/>
+                                            <constraint firstItem="uhg-fj-MrL" firstAttribute="leading" secondItem="71U-LG-8wD" secondAttribute="leading" constant="8" id="7zY-8z-9Ds"/>
+                                            <constraint firstAttribute="bottom" secondItem="uhg-fj-MrL" secondAttribute="bottom" constant="8" id="BzK-wK-q9Y"/>
+                                            <constraint firstAttribute="trailing" secondItem="uhg-fj-MrL" secondAttribute="trailing" constant="8" id="cnI-Lx-jlv"/>
+                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i3H-CK-ksu">
                                         <rect key="frame" x="0.0" y="659" width="414" height="1"/>
@@ -134,6 +146,9 @@
                                                 </constraints>
                                                 <color key="tintColor" name="IconColor"/>
                                                 <state key="normal" backgroundImage="paperplane.circle" catalog="system"/>
+                                                <connections>
+                                                    <action selector="sendMessage:" destination="JRH-db-aeO" eventType="touchUpInside" id="6B9-hS-vtX"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" name="MainBackground"/>
@@ -176,6 +191,7 @@
                     <connections>
                         <outlet property="chatView" destination="x9n-3f-fun" id="f3o-Sg-ySb"/>
                         <outlet property="chatViewBottom" destination="WFL-sD-E1q" id="KfD-X3-kYc"/>
+                        <outlet property="tableView" destination="uhg-fj-MrL" id="2gH-6P-Saq"/>
                         <outlet property="textView" destination="QL3-20-Ham" id="81t-LJ-jvp"/>
                         <outlet property="textViewHeight" destination="XWc-Lz-fep" id="Fee-3n-v1t"/>
                     </connections>

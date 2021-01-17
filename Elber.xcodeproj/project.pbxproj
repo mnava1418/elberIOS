@@ -15,6 +15,8 @@
 		5075174725A4F196009E8C8E /* ElberController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5075174625A4F196009E8C8E /* ElberController.swift */; };
 		5075174C25A4F555009E8C8E /* CryptoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5075174B25A4F555009E8C8E /* CryptoViewController.swift */; };
 		507B8DB325B3535900A2F017 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507B8DB225B3535900A2F017 /* ChatViewController.swift */; };
+		507B8DB925B3A47D00A2F017 /* SendMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507B8DB725B3A47C00A2F017 /* SendMessageTableViewCell.swift */; };
+		507B8DBA25B3A47D00A2F017 /* SendMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 507B8DB825B3A47C00A2F017 /* SendMessageTableViewCell.xib */; };
 		5080E68F259AB5FA00155F22 /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5080E68E259AB5FA00155F22 /* AppController.swift */; };
 		50992E2F2593FD260077A203 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50992E2E2593FD260077A203 /* AppDelegate.swift */; };
 		50992E312593FD260077A203 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50992E302593FD260077A203 /* SceneDelegate.swift */; };
@@ -93,6 +95,8 @@
 		5075174625A4F196009E8C8E /* ElberController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElberController.swift; sourceTree = "<group>"; };
 		5075174B25A4F555009E8C8E /* CryptoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoViewController.swift; sourceTree = "<group>"; };
 		507B8DB225B3535900A2F017 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		507B8DB725B3A47C00A2F017 /* SendMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageTableViewCell.swift; sourceTree = "<group>"; };
+		507B8DB825B3A47C00A2F017 /* SendMessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendMessageTableViewCell.xib; sourceTree = "<group>"; };
 		5080E68E259AB5FA00155F22 /* AppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
 		50992E2B2593FD260077A203 /* Elber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50992E2E2593FD260077A203 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -261,6 +265,8 @@
 				509CFFCC259515C90040F04F /* ViewUtils.swift */,
 				5075174B25A4F555009E8C8E /* CryptoViewController.swift */,
 				507B8DB225B3535900A2F017 /* ChatViewController.swift */,
+				507B8DB725B3A47C00A2F017 /* SendMessageTableViewCell.swift */,
+				507B8DB825B3A47C00A2F017 /* SendMessageTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -393,6 +399,7 @@
 				50992E3B2593FD280077A203 /* LaunchScreen.storyboard in Resources */,
 				50992E382593FD280077A203 /* Assets.xcassets in Resources */,
 				50992E362593FD260077A203 /* Main.storyboard in Resources */,
+				507B8DBA25B3A47D00A2F017 /* SendMessageTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +541,7 @@
 				50992E312593FD260077A203 /* SceneDelegate.swift in Sources */,
 				506358AC25955EF40064E103 /* SpeechController.swift in Sources */,
 				5075174725A4F196009E8C8E /* ElberController.swift in Sources */,
+				507B8DB925B3A47D00A2F017 /* SendMessageTableViewCell.swift in Sources */,
 				50F09B5E2597ADF900269A93 /* Constants.swift in Sources */,
 				50BE2886259BDF7E003DC120 /* UserModel.swift in Sources */,
 				507B8DB325B3535900A2F017 /* ChatViewController.swift in Sources */,
