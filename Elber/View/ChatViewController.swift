@@ -39,9 +39,9 @@ class ChatViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.title = "Chat"
-        addObservers()
         setTextView()
         setTableView()
+        addObservers()
     }
     
     private func setTableView() {
@@ -60,10 +60,14 @@ class ChatViewController: UIViewController {
     
     private func addObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     private func removeObservers() {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     private func adjustMessageView(increase: CGFloat) {
@@ -91,9 +95,21 @@ class ChatViewController: UIViewController {
             let keyboardHeight = keyboardScreenEndFrame.height
             let safeHeight = self.parent!.view.safeAreaInsets.bottom * 2
             let constant = keyboardHeight - safeHeight
-            
-            self.chatViewBottom.constant = constant
-            self.chatView.layoutIfNeeded()
+            adjustChatView(constant: constant)
+        }
+    }
+    
+    @objc func keyboardWillHide() {
+        adjustChatView(constant: 0)
+        self.textView.resignFirstResponder()
+    }
+    
+    private func adjustChatView(constant:CGFloat) {
+        self.chatViewBottom.constant = constant
+        self.chatView.layoutIfNeeded()
+        
+        if self.elberMessages.count > 0 {
+            self.tableView.scrollToRow(at: IndexPath(row: self.elberMessages.count - 1, section: 0), at: .bottom, animated: true)
         }
     }
     
