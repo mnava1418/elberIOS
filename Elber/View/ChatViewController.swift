@@ -36,7 +36,7 @@ class ChatViewController: UIViewController {
     var minHeight:CGFloat!
     var elberMessages:[ElberMessage] = []
     
-    var socketIO:SocketIOController?
+    var elberViewController:ElberViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -144,17 +144,25 @@ class ChatViewController: UIViewController {
         if message != "" {
             self.addMessageToChat(message: message, type: .sender)
             
-            if let _ = socketIO {
-                socketIO!.sendMessage(message: message, completion: { (response) in
-                    var elberResponse = ""
-                    if let error = response["error"] as? String {
-                        elberResponse = error
-                    } else {
-                     elberResponse = response["elberResponse"] as! String
-                    }
-                    
-                    self.addMessageToChat(message: elberResponse, type: .receiver)
-                })
+            self.elberViewController.socketController.sendMessage(message: message) { (response) in
+                var elberResponse = ""
+                if let error = response["error"] as? String {
+                    elberResponse = error
+                } else {
+                    elberResponse = response["elberResponse"] as! String
+                    self.elberViewController.localFunction = response["localFunction"] as? String
+                    self.elberViewController.localParameters = response["parameters"] as? Dictionary<String, Any>
+                }
+                
+                self.addMessageToChat(message: elberResponse, type: .receiver)
+                
+                if let function = self.elberViewController.localFunction, let parameters = self.elberViewController.localParameters {
+                    self.elberViewController.elberController.processResponse(localFunction: function, parameters: parameters)
+                }
+                
+                self.elberViewController.localFunction = nil
+                self.elberViewController.localParameters = nil
+                self.elberViewController.btnElber.isEnabled = true
             }
         }
     }

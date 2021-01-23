@@ -119,7 +119,7 @@ class ElberViewController: UIViewController {
             destination.data = self.localParameters
         case ElberControllerLocalFunctions.showChat.rawValue:
             let destination = segue.destination as! ChatViewController
-            destination.socketIO = self.socketController
+            destination.elberViewController = self
         default:
             print("Nothing to prepare...")
         }
