@@ -73,7 +73,7 @@ class ChatViewController: UIViewController {
     }
     
     private func adjustMessageView(increase: CGFloat) {
-        let maxHeight:CGFloat = 150
+        let maxHeight:CGFloat = 160
         var newHeight = self.textViewHeight.constant + ( 25 * increase )
         
         if newHeight > maxHeight {
@@ -122,7 +122,7 @@ class ChatViewController: UIViewController {
         let message = textView.text.trimmingCharacters(in: .whitespacesAndNewlines)
         self.textViewLines = 1
         textView.text = ""
-        self.textViewHeight.constant = minHeight
+        self.textViewHeight.constant = minHeight - 16
         
         if message != "" {
             let elberMessage = ElberMessage(message: message, type: .sender)
