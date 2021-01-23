@@ -1,15 +1,16 @@
 //
-//  SendMessageTableViewCell.swift
+//  ReceiveMessageTableViewCell.swift
 //  Elber
 //
-//  Created by Martin Nava Pe&a on 16/01/21.
+//  Created by Martin Nava Pe&a on 23/01/21.
 //
 
 import UIKit
 
-class SendMessageTableViewCell: UITableViewCell {
-    @IBOutlet weak var textView: UITextView!
+class ReceiveMessageTableViewCell: UITableViewCell {
+
     @IBOutlet weak var cellView: UIView!
+    @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var widthView: NSLayoutConstraint!
     
     override func awakeFromNib() {

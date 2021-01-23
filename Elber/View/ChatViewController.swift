@@ -36,6 +36,8 @@ class ChatViewController: UIViewController {
     var minHeight:CGFloat!
     var elberMessages:[ElberMessage] = []
     
+    var socketIO:SocketIOController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -48,6 +50,7 @@ class ChatViewController: UIViewController {
     
     private func setTableView() {
         tableView.register(UINib(nibName: "SendMessageTableViewCell", bundle: nil), forCellReuseIdentifier: "sendMessageCell")
+        tableView.register(UINib(nibName: "ReceiveMessageTableViewCell", bundle: nil), forCellReuseIdentifier: "receiveMessageCell")
         tableView.dataSource = self
         tableView.delegate = self
     }
@@ -118,6 +121,20 @@ class ChatViewController: UIViewController {
         }
     }
     
+    private func addMessageToChat(message:String, type:MessageType) {
+        let chatMessage = ElberMessage(message: message, type: type)
+        self.elberMessages.append(chatMessage)
+        let indexPath = IndexPath(row: self.elberMessages.count - 1, section: 0)
+        
+        if type == .receiver {
+            self.tableView.insertRows(at: [indexPath], with: .left)
+        } else {
+            self.tableView.insertRows(at: [indexPath], with: .right)
+        }
+    
+        self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+    }
+    
     @IBAction func sendMessage(_ sender: Any) {
         let message = textView.text.trimmingCharacters(in: .whitespacesAndNewlines)
         self.textViewLines = 1
@@ -125,12 +142,20 @@ class ChatViewController: UIViewController {
         self.textViewHeight.constant = minHeight - 16
         
         if message != "" {
-            let elberMessage = ElberMessage(message: message, type: .sender)
-            self.elberMessages.append(elberMessage)
+            self.addMessageToChat(message: message, type: .sender)
             
-            let indexPath = IndexPath(row: self.elberMessages.count - 1, section: 0)
-            self.tableView.insertRows(at: [indexPath], with: .right)
-            self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+            if let _ = socketIO {
+                socketIO!.sendMessage(message: message, completion: { (response) in
+                    var elberResponse = ""
+                    if let error = response["error"] as? String {
+                        elberResponse = error
+                    } else {
+                     elberResponse = response["elberResponse"] as! String
+                    }
+                    
+                    self.addMessageToChat(message: elberResponse, type: .receiver)
+                })
+            }
         }
     }
     
@@ -182,6 +207,11 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let elberMessage = elberMessages[indexPath.row]
+        
+        if(elberMessage.type == .receiver) {
+            return prepareReceiverMessage(elberMessage: elberMessage, indexPath: indexPath)
+        }
+        
         return prepareSenderMessage(elberMessage: elberMessage, indexPath: indexPath)
     }
     
@@ -201,12 +231,25 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     private func prepareSenderMessage(elberMessage:ElberMessage, indexPath:IndexPath) -> SendMessageTableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "sendMessageCell", for: indexPath) as! SendMessageTableViewCell
         
-        let width = estimateFrameForText(text: elberMessage.message).width + 30
+        let width = estimateFrameForText(text: elberMessage.message).width + 45
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = UIColor(named: "MainBackground")
+                
+        cell.widthView.constant = width
+        cell.textView.text = elberMessage.message
+        cell.selectedBackgroundView = backgroundView
+        
+        return cell
+    }
+    
+    private func prepareReceiverMessage(elberMessage:ElberMessage, indexPath:IndexPath) -> ReceiveMessageTableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "receiveMessageCell", for: indexPath) as! ReceiveMessageTableViewCell
+        
+        let width = estimateFrameForText(text: elberMessage.message).width + 45
         let backgroundView = UIView()
         backgroundView.backgroundColor = UIColor(named: "MainBackground")
         
-        cell.cellView.translatesAutoresizingMaskIntoConstraints = false
-        cell.cellView.widthAnchor.constraint(equalToConstant: width).isActive = true
+        cell.widthView.constant = width
         cell.textView.text = elberMessage.message
         cell.selectedBackgroundView = backgroundView
         

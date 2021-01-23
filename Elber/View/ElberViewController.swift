@@ -47,7 +47,8 @@ class ElberViewController: UIViewController {
     }
     
     @objc private func showChat() {
-        self.performSegue(withIdentifier: "showChat", sender: nil)
+        self.localFunction = ElberControllerLocalFunctions.showChat.rawValue
+        self.performSegue(withIdentifier: ElberControllerLocalFunctions.showChat.rawValue, sender: nil)
     }
     
     private func validateToken () {
@@ -116,6 +117,9 @@ class ElberViewController: UIViewController {
         case ElberControllerLocalFunctions.showCrypto.rawValue:
             let destination = segue.destination as! CryptoViewController
             destination.data = self.localParameters
+        case ElberControllerLocalFunctions.showChat.rawValue:
+            let destination = segue.destination as! ChatViewController
+            destination.socketIO = self.socketController
         default:
             print("Nothing to prepare...")
         }

@@ -10,6 +10,7 @@ import UIKit
 
 enum ElberControllerLocalFunctions: String {
     case showCrypto = "showCrypto"
+    case showChat = "showChat"
 }
 
 class ElberController {

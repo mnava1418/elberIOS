@@ -18,10 +18,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xio-yY-boj">
-                        <rect key="frame" x="286" y="8" width="26" height="56"/>
+                        <rect key="frame" x="262" y="8" width="50" height="56"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWi-TJ-UN0">
-                                <rect key="frame" x="8" y="8" width="10" height="40"/>
+                                <rect key="frame" x="8" y="8" width="34" height="40"/>
                                 <color key="backgroundColor" name="IconColor"/>
                                 <color key="textColor" name="TextColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -30,18 +30,19 @@
                         </subviews>
                         <color key="backgroundColor" name="IconColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="zWi-TJ-UN0" secondAttribute="trailing" constant="8" id="8SE-vK-exX"/>
-                            <constraint firstItem="zWi-TJ-UN0" firstAttribute="leading" secondItem="xio-yY-boj" secondAttribute="leading" constant="8" id="TE3-CS-ROa"/>
-                            <constraint firstItem="zWi-TJ-UN0" firstAttribute="top" secondItem="xio-yY-boj" secondAttribute="top" constant="8" id="oRn-bY-Q14"/>
-                            <constraint firstAttribute="bottom" secondItem="zWi-TJ-UN0" secondAttribute="bottom" constant="8" id="ylZ-8h-uMy"/>
+                            <constraint firstItem="zWi-TJ-UN0" firstAttribute="leading" secondItem="xio-yY-boj" secondAttribute="leading" constant="8" id="2M0-U0-2jR"/>
+                            <constraint firstItem="zWi-TJ-UN0" firstAttribute="top" secondItem="xio-yY-boj" secondAttribute="top" constant="8" id="Bo5-mW-arZ"/>
+                            <constraint firstAttribute="bottom" secondItem="zWi-TJ-UN0" secondAttribute="bottom" constant="8" id="DsR-Ty-i2y"/>
+                            <constraint firstAttribute="width" constant="50" id="JqY-qf-mV1"/>
+                            <constraint firstAttribute="trailing" secondItem="zWi-TJ-UN0" secondAttribute="trailing" constant="8" id="poQ-7P-rY0"/>
                         </constraints>
                     </view>
                 </subviews>
                 <color key="backgroundColor" name="MainBackground"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="xio-yY-boj" secondAttribute="trailing" constant="8" id="8gG-DV-Pc9"/>
-                    <constraint firstAttribute="bottom" secondItem="xio-yY-boj" secondAttribute="bottom" constant="8" id="SPW-yc-MuC"/>
-                    <constraint firstItem="xio-yY-boj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="tMS-b4-On6"/>
+                    <constraint firstAttribute="bottom" secondItem="xio-yY-boj" secondAttribute="bottom" constant="8" id="ef0-9x-O9K"/>
+                    <constraint firstAttribute="trailing" secondItem="xio-yY-boj" secondAttribute="trailing" constant="8" id="h79-Rx-3EI"/>
+                    <constraint firstItem="xio-yY-boj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="nn1-yS-6VW"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -49,6 +50,7 @@
             <connections>
                 <outlet property="cellView" destination="xio-yY-boj" id="4uz-fz-FTQ"/>
                 <outlet property="textView" destination="zWi-TJ-UN0" id="7BF-ys-pEb"/>
+                <outlet property="widthView" destination="JqY-qf-mV1" id="x4y-ru-DK7"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="72.991071428571431"/>
         </tableViewCell>
